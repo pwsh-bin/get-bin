@@ -1,0 +1,187 @@
+[
+  {
+    "binary": "cilium",
+    "paths": [["cilium.exe", "cilium.exe", "version"]],
+    "repository": "cilium/cilium-cli",
+    "uriTemplate": "https://github.com/cilium/cilium-cli/releases/download/v%version%/cilium-windows-amd64.tar.gz",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "cmctl",
+    "paths": [["cmctl", "cmctl.exe", "version --short --client"]],
+    "repository": "jetstack/cert-manager",
+    "uriTemplate": "https://github.com/jetstack/cert-manager/releases/download/v%version%/cmctl-windows-amd64.tar.gz",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "devspace",
+    "paths": [["devspace-windows-amd64.exe", "devspace.exe", "--version"]],
+    "repository": "loft-sh/devspace",
+    "uriTemplate": "https://github.com/loft-sh/devspace/releases/download/v%version%/devspace-windows-amd64.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "gh",
+    "paths": [["bin\\gh.exe", "gh.exe", "--version"]],
+    "repository": "cli/cli",
+    "uriTemplate": "https://github.com/cli/cli/releases/download/v%version%/gh_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "helm",
+    "paths": [["windows-amd64\\helm.exe", "helm.exe", "version --short"]],
+    "repository": "helm/helm",
+    "uriTemplate": "https://get.helm.sh/helm-v%version%-windows-amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "kubectl",
+    "paths": [["kubectl.exe", "kubectl.exe", "version --short --client"]],
+    "repository": "kubernetes/kubectl",
+    "uriTemplate": "https://storage.googleapis.com/kubernetes-release/release/v%version%/bin/windows/amd64/kubectl.exe",
+    "versionPrefix": "kubernetes-"
+  },
+  {
+    "binary": "okteto",
+    "paths": [["okteto.exe", "okteto.exe", "version"]],
+    "repository": "okteto/okteto",
+    "uriTemplate": "https://github.com/okteto/okteto/releases/download/%version%/okteto.exe",
+    "versionPrefix": ""
+  },
+  {
+    "binary": "packer",
+    "paths": [["packer.exe", "packer.exe", "version"]],
+    "repository": "hashicorp/packer",
+    "uriTemplate": "https://releases.hashicorp.com/packer/%version%/packer_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "terraform",
+    "paths": [["terraform.exe", "terraform.exe", "version"]],
+    "repository": "hashicorp/terraform",
+    "uriTemplate": "https://releases.hashicorp.com/terraform/%version%/terraform_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "pulumi",
+    "paths": [["pulumi\\bin\\pulumi.exe", "pulumi.exe", "version"]],
+    "repository": "pulumi/pulumi",
+    "uriTemplate": "https://get.pulumi.com/releases/sdk/pulumi-v%version%-windows-x64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "step",
+    "paths": [["step_%version%\\bin\\step.exe", "step.exe", "version"]],
+    "repository": "smallstep/cli",
+    "uriTemplate": "https://github.com/smallstep/cli/releases/download/v%version%/step_windows_%version%_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "velero",
+    "paths": [
+      [
+        "velero-v%version%-windows-amd64\\velero.exe",
+        "velero.exe",
+        "version --client-only"
+      ]
+    ],
+    "repository": "vmware-tanzu/velero",
+    "uriTemplate": "https://github.com/vmware-tanzu/velero/releases/download/v%version%/velero-v%version%-windows-amd64.tar.gz",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "kubeval",
+    "paths": [["kubeval.exe", "kubeval.exe", "--version"]],
+    "repository": "instrumenta/kubeval",
+    "uriTemplate": "https://github.com/instrumenta/kubeval/releases/download/v%version%/kubeval-windows-amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "kube-score",
+    "paths": [
+      ["kube-score_%version%_windows_amd64.exe", "kube-score.exe", "version"]
+    ],
+    "repository": "zegl/kube-score",
+    "uriTemplate": "https://github.com/zegl/kube-score/releases/download/v%version%/kube-score_%version%_windows_amd64.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "eksctl",
+    "paths": [["eksctl.exe", "eksctl.exe", "version"]],
+    "repository": "weaveworks/eksctl",
+    "uriTemplate": "https://github.com/weaveworks/eksctl/releases/download/v%version%/eksctl_Windows_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "helmfile",
+    "paths": [["helmfile_windows_amd64.exe", "helmfile.exe", "version"]],
+    "repository": "roboll/helmfile",
+    "uriTemplate": "https://github.com/roboll/helmfile/releases/download/v%version%/helmfile_windows_amd64.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "helmsman",
+    "paths": [["helmsman.exe", "helmsman.exe", "-v"]],
+    "repository": "Praqma/helmsman",
+    "uriTemplate": "https://github.com/Praqma/helmsman/releases/download/v%version%/helmsman_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "ecs",
+    "paths": [["ecs-cli-windows-amd64-v%version%.exe", "ecs.exe", "--version"]],
+    "repository": "aws/amazon-ecs-cli",
+    "uriTemplate": "https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-windows-amd64-v%version%.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "copilot",
+    "paths": [["copilot-windows-v%version%.exe", "copilot.exe", "--version"]],
+    "repository": "aws/copilot-cli",
+    "uriTemplate": "https://github.com/aws/copilot-cli/releases/download/v%version%/copilot-windows-v%version%.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "vector",
+    "paths": [["bin\\vector.exe", "vector.exe", "--version"]],
+    "repository": "vectordotdev/vector",
+    "uriTemplate": "https://github.com/vectordotdev/vector/releases/download/v%version%/vector-%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "paket",
+    "paths": [["paket.exe", "paket.exe", "--version"]],
+    "repository": "fsprojects/Paket",
+    "uriTemplate": "https://github.com/fsprojects/Paket/releases/download/%version%/paket.exe",
+    "versionPrefix": ""
+  },
+  {
+    "binary": "dive",
+    "paths": [["dive.exe", "dive.exe", "--version"]],
+    "repository": "wagoodman/dive",
+    "uriTemplate": "https://github.com/wagoodman/dive/releases/download/v%version%/dive_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "tkn",
+    "paths": [["tkn.exe", "tkn.exe", "version"]],
+    "repository": "tektoncd/cli",
+    "uriTemplate": "https://github.com/tektoncd/cli/releases/download/v%version%/tkn_%version%_Windows_x86_64.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "argocd",
+    "paths": [
+      ["argocd-windows-amd64.exe", "argocd.exe", "version --short --client"]
+    ],
+    "repository": "argoproj/argo-cd",
+    "uriTemplate": "https://github.com/argoproj/argo-cd/releases/download/v%version%/argocd-windows-amd64.exe",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "tsh",
+    "paths": [["teleport\\tsh.exe", "tsh.exe", "version"]],
+    "repository": "gravitational/teleport",
+    "uriTemplate": "https://get.gravitational.com/teleport-v%version%-windows-amd64-bin.zip",
+    "versionPrefix": "v"
+  }
+]
