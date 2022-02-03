@@ -197,5 +197,12 @@
     "repository": "cloud-bulldozer/kube-burner",
     "uriTemplate": "https://github.com/cloud-bulldozer/kube-burner/releases/download/v%version%/kube-burner-%version%-Windows-x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "mizu",
+    "paths": [["mizu.exe", "mizu.exe", "version"]],
+    "repository": "up9inc/mizu",
+    "uriTemplate": "https://github.com/up9inc/mizu/releases/download/%version%/mizu.exe",
+    "versionPrefix": ""
   }
 ]
