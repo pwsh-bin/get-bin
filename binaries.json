@@ -204,5 +204,12 @@
     "repository": "up9inc/mizu",
     "uriTemplate": "https://github.com/up9inc/mizu/releases/download/%version%/mizu.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "nerdctl",
+    "paths": [["nerdctl.exe", "nerdctl.exe", "--version"]],
+    "repository": "containerd/nerdctl",
+    "uriTemplate": "https://github.com/containerd/nerdctl/releases/download/v%version%/nerdctl-%version%-windows-amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
