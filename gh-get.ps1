@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.0"
+${VERSION} = "v0.1.1"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -23,6 +23,7 @@ if (-not (Test-Path -Path ${TEMP_PATH} -PathType "Container")) {
 }
 
 function GetBinaries {
+  # ${uri} = "https://github.com/pwsh-bin/gh-get/raw/binaries/x/binaries.json"
   ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
   return ((Invoke-RestMethod -Method "Get" -Uri ${uri}) |
     Sort-Object -Property "binary")
@@ -155,13 +156,15 @@ function DownloadFromGitHub {
   foreach (${path} in ${Paths}) {
     ${from} = "${TEMP_PATH}\$(${path}[0] -creplace "%version%", ${version})"
     ${to} = "${env:GH_GET_HOME}\$(${path}[1])"
-    ${arguments} = ${path}[2]
-    ${command} = "${to} ${arguments}"
     if (Test-Path -Path ${to} -PathType "Container") {
       Remove-Item -Force -Recurse -Path ${to}
     }
     Move-Item -Force -Path ${from} -Destination ${to}
-    Invoke-Expression -Command ${command}
+    if (${path}.count -eq 3) {
+      ${arguments} = ${path}[2]
+      ${command} = "${to} ${arguments}"
+      Invoke-Expression -Command ${command}
+    }
   }
   Remove-Item -Force -Recurse -Path ${TEMP_PATH}
 }
