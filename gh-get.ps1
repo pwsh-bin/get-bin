@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.1"
+${VERSION} = "v0.1.2"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -155,8 +155,11 @@ function DownloadFromGitHub {
   }
   foreach (${path} in ${Paths}) {
     ${from} = "${TEMP_PATH}\$(${path}[0] -creplace "%version%", ${version})"
+    if (-not (Test-Path -Path ${from} -PathType "Leaf")) {
+      continue
+    }
     ${to} = "${env:GH_GET_HOME}\$(${path}[1])"
-    if (Test-Path -Path ${to} -PathType "Container") {
+    if (Test-Path -Path ${to} -PathType "Leaf") {
       Remove-Item -Force -Recurse -Path ${to}
     }
     Move-Item -Force -Path ${from} -Destination ${to}
