@@ -190,5 +190,12 @@
     "repository": "bazelbuild/bazel",
     "uriTemplate": "https://github.com/bazelbuild/bazel/releases/download/%version%/bazel-%version%-windows-x86_64.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "kube-burner",
+    "paths": [["kube-burner.exe", "kube-burner.exe", "version"]],
+    "repository": "cloud-bulldozer/kube-burner",
+    "uriTemplate": "https://github.com/cloud-bulldozer/kube-burner/releases/download/v%version%/kube-burner-%version%-Windows-x86_64.zip",
+    "versionPrefix": "v"
   }
 ]
