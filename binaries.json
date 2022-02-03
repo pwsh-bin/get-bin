@@ -183,5 +183,12 @@
     "repository": "gravitational/teleport",
     "uriTemplate": "https://get.gravitational.com/teleport-v%version%-windows-amd64-bin.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "bazel",
+    "paths": [["bazel-%version%-windows-x86_64.exe", "bazel.exe", "version"]],
+    "repository": "bazelbuild/bazel",
+    "uriTemplate": "https://github.com/bazelbuild/bazel/releases/download/%version%/bazel-%version%-windows-x86_64.exe",
+    "versionPrefix": ""
   }
 ]
