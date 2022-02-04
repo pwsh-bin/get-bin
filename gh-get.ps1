@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.2"
+${VERSION} = "v0.1.3"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -174,7 +174,7 @@ function DownloadFromGitHub {
 
 switch (${args}[0]) {
   { $_ -in "si", "self-install" } {
-    Invoke-RestMethod -Method "Get" -Uri "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1"
+    Invoke-RestMethod -Method "Get" -Uri "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1" |
     Invoke-Expression
     return
   }
