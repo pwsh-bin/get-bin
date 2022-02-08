@@ -221,5 +221,15 @@
     "repository": "gerardog/gsudo",
     "uriTemplate": "https://github.com/gerardog/gsudo/releases/download/v%version%/gsudo.v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "jsonnet",
+    "paths": [
+      ["jsonnet.exe", "jsonnet.exe", "--version"],
+      ["jsonnetfmt.exe", "jsonnetfmt.exe", "--version"]
+    ],
+    "repository": "google/go-jsonnet",
+    "uriTemplate": "https://github.com/google/go-jsonnet/releases/download/v%version%/go-jsonnet_%version%_Windows_x86_64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
