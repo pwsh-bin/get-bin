@@ -238,5 +238,12 @@
     "repository": "minio/minio",
     "uriTemplate": "https://dl.minio.io/server/minio/release/windows-amd64/archive/minio.RELEASE.%version%",
     "versionPrefix": "RELEASE."
+  },
+  {
+    "binary": "mc",
+    "paths": [["mc.RELEASE.%version%", "mc.exe", "--version"]],
+    "repository": "minio/mc",
+    "uriTemplate": "https://dl.minio.io/client/mc/release/windows-amd64/archive/mc.RELEASE.%version%",
+    "versionPrefix": "RELEASE."
   }
 ]
