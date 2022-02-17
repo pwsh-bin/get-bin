@@ -245,5 +245,12 @@
     "repository": "minio/mc",
     "uriTemplate": "https://dl.minio.io/client/mc/release/windows-amd64/archive/mc.RELEASE.%version%",
     "versionPrefix": "RELEASE."
+  },
+  {
+    "binary": "kes",
+    "paths": [["kes-windows-amd64.exe", "kes.exe", "--version"]],
+    "repository": "minio/kes",
+    "uriTemplate": "https://github.com/minio/kes/releases/download/v%version%/kes-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
