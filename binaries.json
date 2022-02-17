@@ -259,5 +259,12 @@
     "repository": "loft-sh/loft",
     "uriTemplate": "https://github.com/loft-sh/loft/releases/download/v%version%/loft-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "helmwave",
+    "paths": [["helmwave.exe", "helmwave.exe", "--version"]],
+    "repository": "helmwave/helmwave",
+    "uriTemplate": "https://github.com/helmwave/helmwave/releases/download/v%version%/helmwave_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
