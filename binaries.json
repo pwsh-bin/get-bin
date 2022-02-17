@@ -266,5 +266,14 @@
     "repository": "helmwave/helmwave",
     "uriTemplate": "https://github.com/helmwave/helmwave/releases/download/v%version%/helmwave_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "kuberlr",
+    "paths": [
+      ["kuberlr_%version%_windows_amd64\\kuberlr.exe", "kuberlr.exe", "version"]
+    ],
+    "repository": "flavio/kuberlr",
+    "uriTemplate": "https://github.com/flavio/kuberlr/releases/download/v%version%/kuberlr_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
