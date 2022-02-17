@@ -305,5 +305,16 @@
     "repository": "containers/podman",
     "uriTemplate": "https://github.com/containers/podman/releases/download/v%version%/podman-remote-release-windows.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "containerd",
+    "paths": [
+      ["bin\\ctr.exe", "ctr.exe"],
+      ["bin\\containerd-shim-runhcs-v1.exe", "containerd-shim-runhcs-v1.exe"],
+      ["bin\\containerd.exe", "containerd.exe", "--version"]
+    ],
+    "repository": "containerd/containerd",
+    "uriTemplate": "https://github.com/containerd/containerd/releases/download/v%version%/containerd-%version%-windows-amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
