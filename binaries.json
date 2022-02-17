@@ -298,5 +298,12 @@
     "repository": "cloudflare/cloudflared",
     "uriTemplate": "https://github.com/cloudflare/cloudflared/releases/download/%version%/cloudflared-windows-amd64.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "podman",
+    "paths": [["podman-%version%\\podman.exe", "podman.exe", "--version"]],
+    "repository": "containers/podman",
+    "uriTemplate": "https://github.com/containers/podman/releases/download/v%version%/podman-remote-release-windows.zip",
+    "versionPrefix": "v"
   }
 ]
