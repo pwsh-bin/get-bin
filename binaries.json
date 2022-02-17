@@ -231,5 +231,12 @@
     "repository": "google/go-jsonnet",
     "uriTemplate": "https://github.com/google/go-jsonnet/releases/download/v%version%/go-jsonnet_%version%_Windows_x86_64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "minio",
+    "paths": [["minio.RELEASE.%version%", "minio.exe", "--version"]],
+    "repository": "minio/minio",
+    "uriTemplate": "https://dl.minio.io/server/minio/release/windows-amd64/archive/minio.RELEASE.%version%",
+    "versionPrefix": "RELEASE."
   }
 ]
