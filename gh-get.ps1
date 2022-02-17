@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.3"
+${VERSION} = "v0.1.4"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -25,8 +25,8 @@ if (-not (Test-Path -Path ${TEMP_PATH} -PathType "Container")) {
 function GetBinaries {
   # ${uri} = "https://github.com/pwsh-bin/gh-get/raw/binaries/x/binaries.json"
   ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
-  return ((Invoke-RestMethod -Method "Get" -Uri ${uri}) |
-    Sort-Object -Property "binary")
+  return ((Invoke-RestMethod -Method "Get" -Uri ${uri})
+    | Sort-Object -Property "binary")
 }
 
 function GetGitHubToken {
@@ -65,8 +65,8 @@ function GetGitHubTagNameFromReleases {
     if (${releases}.count -eq 0) {
       return $null
     }
-    ${filtered_releases} = (${releases} |
-      Where-Object -Property "prerelease" -eq $false)
+    ${filtered_releases} = (${releases}
+      | Where-Object -Property "prerelease" -eq $false)
     if ($null -ne ${filtered_releases}) {
       return ${filtered_releases}[0].tag_name
     }
@@ -97,8 +97,8 @@ function GetGitHubTagNameFromTags {
     if (${tags}.count -eq 0) {
       return $null
     }
-    ${filtered_tags} = (${tags} |
-      Where-Object -Property "name" -cmatch ${Pattern})
+    ${filtered_tags} = (${tags}
+      | Where-Object -Property "name" -clike ${Pattern})
     if ($null -ne ${filtered_tags}) {
       return ${filtered_tags}[0].name
     }
@@ -119,11 +119,11 @@ function DownloadFromGitHub {
   if ($null -eq ${Version}) {
     ${tag_name} = (GetGitHubTagNameFromReleases -RepositoryUri ${repository_uri} -Token ${token})
     if ($null -eq ${tag_name}) {
-      ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}([\d|\.]+)$")
+      ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "${VersionPrefix}*")
     }
   }
   else {
-    ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}${Version}([\d|\.]+)$")
+    ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "${VersionPrefix}${Version}*")
   }
   if ($null -eq ${tag_name}) {
     return
@@ -139,19 +139,13 @@ function DownloadFromGitHub {
     Write-Host $_
     return
   }
-  if (${filename}.EndsWith(".exe")) {
-  }
-  elseif (${filename}.EndsWith(".zip")) {
+  if (${filename}.EndsWith(".zip")) {
     Expand-Archive -Force -Path ${filepath} -DestinationPath ${TEMP_PATH}
     Remove-Item -Force -Path ${filepath}
   }
   elseif (${filename}.EndsWith(".tar.gz")) {
     ${command} = "tar --extract --lzma --file ${filepath} --directory ${TEMP_PATH}"
     Invoke-Expression -Command ${command}
-  }
-  else {
-    Write-Host "[ERROR] Unsupported file extension."
-    return
   }
   foreach (${path} in ${Paths}) {
     ${from} = "${TEMP_PATH}\$(${path}[0] -creplace "%version%", ${version})"
@@ -174,8 +168,8 @@ function DownloadFromGitHub {
 
 switch (${args}[0]) {
   { $_ -in "si", "self-install" } {
-    Invoke-RestMethod -Method "Get" -Uri "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1" |
-    Invoke-Expression
+    Invoke-RestMethod -Method "Get" -Uri "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1"
+    | Invoke-Expression
     return
   }
   { $_ -in "i", "install" } {
@@ -184,8 +178,8 @@ switch (${args}[0]) {
       return
     }
     ${binary}, ${version} = (${args}[1] -csplit "@")
-    ${objects} = (GetBinaries |
-      Where-Object -Property "binary" -clike "${binary}*")
+    ${objects} = (GetBinaries
+      | Where-Object -Property "binary" -clike "${binary}*")
     if (${objects}.count -eq 0) {
       Write-Host "[ERROR] Unsupported binary argument."
       return
@@ -205,8 +199,8 @@ switch (${args}[0]) {
     return
   }
   { $_ -in "l", "list" } {
-    Write-Host ((GetBinaries |
-        Select-Object -ExpandProperty "binary") -join "`n")
+    Write-Host ((GetBinaries
+        | Select-Object -ExpandProperty "binary") -join "`n")
     return
   }
   default {
