@@ -275,5 +275,12 @@
     "repository": "flavio/kuberlr",
     "uriTemplate": "https://github.com/flavio/kuberlr/releases/download/v%version%/kuberlr_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "crictl",
+    "paths": [["crictl.exe", "crictl.exe", "--version"]],
+    "repository": "kubernetes-sigs/cri-tools",
+    "uriTemplate": "https://github.com/kubernetes-sigs/cri-tools/releases/download/v%version%/crictl-v%version%-windows-amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
