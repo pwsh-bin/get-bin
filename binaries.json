@@ -252,5 +252,12 @@
     "repository": "minio/kes",
     "uriTemplate": "https://github.com/minio/kes/releases/download/v%version%/kes-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "loft",
+    "paths": [["loft-windows-amd64.exe", "loft.exe", "--version"]],
+    "repository": "loft-sh/loft",
+    "uriTemplate": "https://github.com/loft-sh/loft/releases/download/v%version%/loft-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
