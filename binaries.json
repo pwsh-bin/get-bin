@@ -289,5 +289,14 @@
     "repository": "moby/buildkit",
     "uriTemplate": "https://github.com/moby/buildkit/releases/download/v%version%/buildkit-v%version%.windows-amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "cloudflared",
+    "paths": [
+      ["cloudflared-windows-amd64.exe", "cloudflared.exe", "--version"]
+    ],
+    "repository": "cloudflare/cloudflared",
+    "uriTemplate": "https://github.com/cloudflare/cloudflared/releases/download/%version%/cloudflared-windows-amd64.exe",
+    "versionPrefix": ""
   }
 ]
