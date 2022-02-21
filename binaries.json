@@ -316,5 +316,14 @@
     "repository": "containerd/containerd",
     "uriTemplate": "https://github.com/containerd/containerd/releases/download/v%version%/containerd-%version%-windows-amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "telegraf",
+    "paths": [
+      ["telegraf-%version%\\telegraf.exe", "telegraf.exe", "--version"]
+    ],
+    "repository": "influxdata/telegraf",
+    "uriTemplate": "https://dl.influxdata.com/telegraf/releases/telegraf-%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
