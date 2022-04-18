@@ -325,5 +325,12 @@
     "repository": "influxdata/telegraf",
     "uriTemplate": "https://dl.influxdata.com/telegraf/releases/telegraf-%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "snyk",
+    "paths": [["snyk-win.exe", "snyk.exe", "version"]],
+    "repository": "snyk/cli",
+    "uriTemplate": "https://github.com/snyk/cli/releases/download/v%version%/snyk-win.exe",
+    "versionPrefix": "v"
   }
 ]
