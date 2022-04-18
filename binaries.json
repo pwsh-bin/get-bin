@@ -376,5 +376,19 @@
     "repository": "gitlabhq/gitlab-runner",
     "uriTemplate": "https://s3.amazonaws.com/gitlab-runner-downloads/v%version%/binaries/gitlab-runner-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "step-ca",
+    "paths": [
+      ["step-ca_%version%\\bin\\step-awskms-init.exe", "step-awskms-init.exe"],
+      [
+        "step-ca_%version%\\bin\\step-cloudkms-init.exe",
+        "step-cloudkms-init.exe"
+      ],
+      ["step-ca_%version%\\bin\\step-ca.exe", "step-ca.exe", "version"]
+    ],
+    "repository": "smallstep/certificates",
+    "uriTemplate": "https://github.com/smallstep/certificates/releases/download/v%version%/step-ca_windows_%version%_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
