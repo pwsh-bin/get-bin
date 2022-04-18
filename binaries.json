@@ -367,5 +367,14 @@
     "repository": "starship/starship",
     "uriTemplate": "https://github.com/starship/starship/releases/download/v%version%/starship-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "gitlab-runner",
+    "paths": [
+      ["gitlab-runner-windows-amd64.exe", "gitlab-runner.exe", "--version"]
+    ],
+    "repository": "gitlabhq/gitlab-runner",
+    "uriTemplate": "https://s3.amazonaws.com/gitlab-runner-downloads/v%version%/binaries/gitlab-runner-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
