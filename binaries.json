@@ -339,5 +339,12 @@
     "repository": "wagoodman/dive",
     "uriTemplate": "https://github.com/wagoodman/dive/releases/download/v%version%/dive_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "grype",
+    "paths": [["grype.exe", "grype.exe", "version"]],
+    "repository": "anchore/grype",
+    "uriTemplate": "https://github.com/anchore/grype/releases/download/v%version%/grype_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
