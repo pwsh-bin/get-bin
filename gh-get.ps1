@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.4"
+${VERSION} = "v0.1.5"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -12,21 +12,40 @@ ${VERSION}
 
 if (${args}.count -eq 0) {
   Write-Host ${HELP}
-  return
+  exit
 }
+
+${DEBUG} = Test-Path -Path "${PSScriptRoot}\.git" -PathType "Container"
 
 ${GITHUB_PATH} = "${env:GH_GET_HOME}\.github"
 
 ${TEMP_PATH} = "${env:GH_GET_HOME}\.temp"
 if (-not (Test-Path -Path ${TEMP_PATH} -PathType "Container")) {
-  ${NO_OUTPUT} = (New-Item -Path ${TEMP_PATH} -ItemType "Directory")
+  New-Item -Path ${TEMP_PATH} -ItemType "Directory" | Out-Null
 }
 
 function GetBinaries {
-  # ${uri} = "https://github.com/pwsh-bin/gh-get/raw/binaries/x/binaries.json"
-  ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
-  return ((Invoke-RestMethod -Method "Get" -Uri ${uri})
+  if (${DEBUG}) {
+    return (Get-Content -Path "${PSScriptRoot}\binaries.json"
+    | ConvertFrom-Json
     | Sort-Object -Property "binary")
+  }
+  else {
+    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
+    ${binaries} = $null
+    if (${DEBUG}) {
+      Write-Host "[DEBUG] GET ${uri}"
+    }
+    try {
+      ${binaries} = Invoke-RestMethod -Method "Get" -Uri ${uri}
+    }
+    catch {
+      Write-Host "[ERROR] GET ${uri}:"
+      Write-Host $_
+      exit
+    }
+    return (${binaries} | Sort-Object -Property "binary")
+  }
 }
 
 function GetGitHubToken {
@@ -52,6 +71,9 @@ function GetGitHubTagNameFromReleases {
   while ($true) {
     ${page} += 1
     ${releases} = $null
+    if (${DEBUG}) {
+      Write-Host "[DEBUG] GET ${uri}"
+    }
     try {
       ${releases} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Authentication "Bearer" -Token ${Token} -Body @{
           "per_page" = 100
@@ -59,8 +81,9 @@ function GetGitHubTagNameFromReleases {
         })
     }
     catch {
+      Write-Host "[ERROR] GET ${uri}:"
       Write-Host $_
-      return $null
+      exit
     }
     if (${releases}.count -eq 0) {
       return $null
@@ -84,6 +107,9 @@ function GetGitHubTagNameFromTags {
   while ($true) {
     ${page} += 1
     ${tags} = $null
+    if (${DEBUG}) {
+      Write-Host "[DEBUG] GET ${uri}"
+    }
     try {
       ${tags} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Authentication "Bearer" -Token ${Token} -Body @{
           "per_page" = 100
@@ -91,8 +117,9 @@ function GetGitHubTagNameFromTags {
         })
     }
     catch {
+      Write-Host "[ERROR] GET ${uri}:"
       Write-Host $_
-      return $null
+      exit
     }
     if (${tags}.count -eq 0) {
       return $null
@@ -126,18 +153,22 @@ function DownloadFromGitHub {
     ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "${VersionPrefix}${Version}*")
   }
   if ($null -eq ${tag_name}) {
-    return
+    return $null
   }
   ${version} = (${tag_name} -creplace ${VersionPrefix}, "")
   ${uri} = (${UriTemplate} -creplace "%version%", ${version})
   ${filename} = (${uri} -csplit "/")[-1]
   ${filepath} = "${TEMP_PATH}\${filename}"
+  if (${DEBUG}) {
+    Write-Host "[DEBUG] GET ${uri}"
+  }
   try {
     Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${filepath}
   }
   catch {
+    Write-Host "[ERROR] GET ${uri}:"
     Write-Host $_
-    return
+    exit
   }
   if (${filename}.EndsWith(".zip")) {
     Expand-Archive -Force -Path ${filepath} -DestinationPath ${TEMP_PATH}
@@ -168,43 +199,51 @@ function DownloadFromGitHub {
 
 switch (${args}[0]) {
   { $_ -in "si", "self-install" } {
-    Invoke-RestMethod -Method "Get" -Uri "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1"
-    | Invoke-Expression
-    return
+    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1"
+    ${command} = $null
+    if (${DEBUG}) {
+      Write-Host "[DEBUG] GET ${uri}"
+    }
+    try {
+      ${command} = Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${filepath}
+    }
+    catch {
+      Write-Host "[ERROR] GET ${uri}:"
+      Write-Host $_
+      exit
+    }
+    Invoke-Expression -Command ${command}
   }
   { $_ -in "i", "install" } {
     if (${args}.count -eq 1) {
       Write-Host "[ERROR] Missing binary argument."
-      return
+      exit
     }
     ${binary}, ${version} = (${args}[1] -csplit "@")
     ${objects} = (GetBinaries
       | Where-Object -Property "binary" -clike "${binary}*")
     if (${objects}.count -eq 0) {
       Write-Host "[ERROR] Unsupported binary argument."
-      return
+      exit
     }
     ${object} = ${objects}[0]
     ${paths} = ${object}.paths
     ${repository} = ${object}.repository
     ${uriTemplate} = ${object}.uriTemplate
     ${versionPrefix} = ${object}.versionPrefix
-    if (${objects}.count -gt 1) {
+    if ((${objects}.count -gt 1) -and (${object}.binary.length -ne ${binary}.length)) {
       Write-Host "[WARN] Found many supported binaries. Will proceed with $(${object}.binary)"
     }
     elseif (${binary} -ne ${object}.binary) {
       Write-Host "[WARN] Found supported binary. Will proceed with $(${object}.binary)"
     }
     DownloadFromGitHub -Paths ${paths} -Repository ${repository} -UriTemplate ${uriTemplate} -Version ${version} -VersionPrefix ${versionPrefix}
-    return
   }
   { $_ -in "l", "list" } {
     Write-Host ((GetBinaries
         | Select-Object -ExpandProperty "binary") -join "`n")
-    return
   }
   default {
     Write-Host "[ERROR] Unsupported command argument."
-    return
   }
 }

@@ -9,7 +9,7 @@ if (${env:PATH} -cnotlike "*${env:GH_GET_HOME}*") {
 }
 
 if (-not (Test-Path -Path ${env:GH_GET_HOME} -PathType "Container")) {
-  ${NO_OUTPUT} = (New-Item -Path ${env:GH_GET_HOME} -ItemType "Directory")
+  New-Item -Path ${env:GH_GET_HOME} -ItemType "Directory" | Out-Null
 }
 
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
