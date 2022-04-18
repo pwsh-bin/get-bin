@@ -353,5 +353,12 @@
     "repository": "microsoft/vswhere",
     "uriTemplate": "https://github.com/microsoft/vswhere/releases/download/%version%/vswhere.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "vcluster",
+    "paths": [["vcluster-windows-amd64.exe", "vcluster.exe", "--version"]],
+    "repository": "loft-sh/vcluster",
+    "uriTemplate": "https://github.com/loft-sh/vcluster/releases/download/v%version%/vcluster-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
