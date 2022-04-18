@@ -346,5 +346,12 @@
     "repository": "anchore/grype",
     "uriTemplate": "https://github.com/anchore/grype/releases/download/v%version%/grype_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "vswhere",
+    "paths": [["vswhere.exe", "vswhere.exe", "-?"]],
+    "repository": "microsoft/vswhere",
+    "uriTemplate": "https://github.com/microsoft/vswhere/releases/download/%version%/vswhere.exe",
+    "versionPrefix": ""
   }
 ]
