@@ -332,5 +332,12 @@
     "repository": "snyk/cli",
     "uriTemplate": "https://github.com/snyk/cli/releases/download/v%version%/snyk-win.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dive",
+    "paths": [["dive.exe", "dive.exe", "version"]],
+    "repository": "wagoodman/dive",
+    "uriTemplate": "https://github.com/wagoodman/dive/releases/download/v%version%/dive_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
