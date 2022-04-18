@@ -360,5 +360,12 @@
     "repository": "loft-sh/vcluster",
     "uriTemplate": "https://github.com/loft-sh/vcluster/releases/download/v%version%/vcluster-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "starship",
+    "paths": [["starship.exe", "starship.exe", "--version"]],
+    "repository": "starship/starship",
+    "uriTemplate": "https://github.com/starship/starship/releases/download/v%version%/starship-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
