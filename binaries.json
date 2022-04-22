@@ -8,7 +8,7 @@
   },
   {
     "binary": "cmctl",
-    "paths": [["cmctl", "cmctl.exe", "version --short --client"]],
+    "paths": [["cmctl.exe", "cmctl.exe", "version --short --client"]],
     "repository": "jetstack/cert-manager",
     "uriTemplate": "https://github.com/jetstack/cert-manager/releases/download/v%version%/cmctl-windows-amd64.tar.gz",
     "versionPrefix": "v"
