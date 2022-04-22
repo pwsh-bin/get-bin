@@ -214,10 +214,7 @@
   },
   {
     "binary": "gsudo",
-    "paths": [
-      ["gsudo.exe", "gsudo.exe", "--version"],
-      ["gsudo", "gsudo"]
-    ],
+    "paths": [["gsudo.exe", "gsudo.exe", "--version"]],
     "repository": "gerardog/gsudo",
     "uriTemplate": "https://github.com/gerardog/gsudo/releases/download/v%version%/gsudo.v%version%.zip",
     "versionPrefix": "v"
