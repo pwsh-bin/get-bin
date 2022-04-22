@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.1.5"
+${VERSION} = "v0.2.0"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -15,18 +15,20 @@ if (${args}.count -eq 0) {
   exit
 }
 
-${DEBUG} = Test-Path -Path "${PSScriptRoot}\.git" -PathType "Container"
+${DEBUG} = Test-Path -PathType "Container" -Path (Join-Path -Path ${PSScriptRoot} -ChildPath ".git")
 
-${GITHUB_PATH} = "${env:GH_GET_HOME}\.github"
+${GITHUB_PATH} = Join-Path -Path ${env:GH_GET_HOME} -ChildPath ".github"
 
-${TEMP_PATH} = "${env:GH_GET_HOME}\.temp"
-if (-not (Test-Path -Path ${TEMP_PATH} -PathType "Container")) {
-  New-Item -Path ${TEMP_PATH} -ItemType "Directory" | Out-Null
+${STORE_PATH} = Join-Path -Path ${env:GH_GET_HOME} -ChildPath ".store"
+if (-not (Test-Path -PathType "Container" -Path ${STORE_PATH})) {
+  New-Item -Force -ItemType "Directory" -Path ${STORE_PATH} | Out-Null
 }
+
+${APP_PATHS} = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths"
 
 function GetBinaries {
   if (${DEBUG}) {
-    return (Get-Content -Path "${PSScriptRoot}\binaries.json"
+    return (Get-Content -Path (Join-Path -Path ${PSScriptRoot} -ChildPath "binaries.json")
     | ConvertFrom-Json
     | Sort-Object -Property "binary")
   }
@@ -49,7 +51,7 @@ function GetBinaries {
 }
 
 function GetGitHubToken {
-  if (Test-Path -Path ${GITHUB_PATH} -PathType "Leaf") {
+  if (Test-Path -PathType "Leaf" -Path ${GITHUB_PATH}) {
     return (Import-Clixml -Path ${GITHUB_PATH})
   }
   else {
@@ -156,45 +158,52 @@ function DownloadFromGitHub {
     return $null
   }
   ${version} = (${tag_name} -creplace ${VersionPrefix}, "")
-  ${uri} = (${UriTemplate} -creplace "%version%", ${version})
-  ${filename} = (${uri} -csplit "/")[-1]
-  ${filepath} = "${TEMP_PATH}\${filename}"
-  if (${DEBUG}) {
-    Write-Host "[DEBUG] GET ${uri}"
-  }
-  try {
-    Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${filepath}
-  }
-  catch {
-    Write-Host "[ERROR] GET ${uri}:"
-    Write-Host $_
-    exit
-  }
-  if (${filename}.EndsWith(".zip")) {
-    Expand-Archive -Force -Path ${filepath} -DestinationPath ${TEMP_PATH}
-    Remove-Item -Force -Path ${filepath}
-  }
-  elseif (${filename}.EndsWith(".tar.gz")) {
-    ${command} = "tar --extract --lzma --file ${filepath} --directory ${TEMP_PATH}"
-    Invoke-Expression -Command ${command}
+  ${directory} = Join-Path -Path ${STORE_PATH} -ChildPath ((${Repository} -creplace "/", "\") + "@${version}")
+  if (-not (Test-Path -PathType "Container" -Path ${directory})) {
+    New-Item -Force -ItemType "Directory" -Path ${directory} | Out-Null
+    ${uri} = (${UriTemplate} -creplace "%version%", ${version})
+    ${filename} = (${uri} -csplit "/")[-1]
+    ${outfile} = "${directory}/${filename}"
+    if (${DEBUG}) {
+      Write-Host "[DEBUG] GET ${uri}"
+    }
+    try {
+      Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${outfile}
+    }
+    catch {
+      Write-Host "[ERROR] GET ${uri}:"
+      Write-Host $_
+      exit
+    }
+    ${is_archive} = $false
+    if (${filename}.EndsWith(".zip")) {
+      ${is_archive} = $true
+      Expand-Archive -Force -Path ${outfile} -DestinationPath ${directory}
+    }
+    elseif (${filename}.EndsWith(".tar.gz")) {
+      ${is_archive} = $true
+      ${command} = "tar --extract --file ${outfile} --directory ${directory}"
+      Invoke-Expression -Command ${command}
+    }
+    if (${is_archive} -eq $true) {
+      Remove-Item -Force -Path ${outfile}
+    }
   }
   foreach (${path} in ${Paths}) {
-    ${from} = "${TEMP_PATH}\$(${path}[0] -creplace "%version%", ${version})"
-    if (-not (Test-Path -Path ${from} -PathType "Leaf")) {
+    ${target} = Join-Path -Path ${directory} -ChildPath (${path}[0] -creplace "%version%", ${version})
+    if (-not (Test-Path -PathType "Leaf" -Path ${target})) {
+      Write-Host "[WARN] Binary " + ${target} + " does not exists. Will skip it."
       continue
     }
-    ${to} = "${env:GH_GET_HOME}\$(${path}[1])"
-    if (Test-Path -Path ${to} -PathType "Leaf") {
-      Remove-Item -Force -Recurse -Path ${to}
-    }
-    Move-Item -Force -Path ${from} -Destination ${to}
+    New-Item -Force -ItemType "HardLink" -Path (Join-Path -Path ${env:GH_GET_HOME} -ChildPath ${path}[1]) -Target ${target} | Out-Null
+    # TODO
+    # New-Item -Force -Path ${APP_PATHS} -Name ${path}[1] -Value ${target} | Out-Null
+    # New-ItemProperty -Force -Path (Join-Path -Path ${APP_PATHS} -ChildPath ${path}[1]) -Name "Path" -Value (Split-Path -Path ${target}) | Out-Null
     if (${path}.count -eq 3) {
-      ${arguments} = ${path}[2]
-      ${command} = "${to} ${arguments}"
+      ${command} = ${path}[1] + " " + ${path}[2]
       Invoke-Expression -Command ${command}
     }
   }
-  Remove-Item -Force -Recurse -Path ${TEMP_PATH}
 }
 
 switch (${args}[0]) {
@@ -205,7 +214,7 @@ switch (${args}[0]) {
       Write-Host "[DEBUG] GET ${uri}"
     }
     try {
-      ${command} = Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${filepath}
+      ${command} = Invoke-RestMethod -Method "Get" -Uri ${uri}
     }
     catch {
       Write-Host "[ERROR] GET ${uri}:"
@@ -232,10 +241,10 @@ switch (${args}[0]) {
     ${uriTemplate} = ${object}.uriTemplate
     ${versionPrefix} = ${object}.versionPrefix
     if ((${objects}.count -gt 1) -and (${object}.binary.length -ne ${binary}.length)) {
-      Write-Host "[WARN] Found many supported binaries. Will proceed with $(${object}.binary)"
+      Write-Host "[WARN] Found many supported binaries. Will proceed with " + ${object}.binary
     }
     elseif (${binary} -ne ${object}.binary) {
-      Write-Host "[WARN] Found supported binary. Will proceed with $(${object}.binary)"
+      Write-Host "[WARN] Found supported binary. Will proceed with " + ${object}.binary
     }
     DownloadFromGitHub -Paths ${paths} -Repository ${repository} -UriTemplate ${uriTemplate} -Version ${version} -VersionPrefix ${versionPrefix}
   }
