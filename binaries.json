@@ -436,5 +436,12 @@
     "repository": "apex/up",
     "uriTemplate": "https://github.com/apex/up/releases/download/v%version%/up_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "tunnel",
+    "paths": [["tunnel.exe", "tunnel.exe", "version"]],
+    "repository": "labstack/tunnel-client",
+    "uriTemplate": "https://github.com/labstack/tunnel-client/releases/download/v%version%/tunnel_%version%_windows_64-bit.zip",
+    "versionPrefix": "v"
   }
 ]
