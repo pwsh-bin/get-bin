@@ -450,5 +450,12 @@
     "repository": "ninja-build/ninja",
     "uriTemplate": "https://github.com/ninja-build/ninja/releases/download/v%version%/ninja-win.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "pack",
+    "paths": [["pack.exe", "pack.exe", "version"]],
+    "repository": "buildpacks/pack",
+    "uriTemplate": "https://github.com/buildpacks/pack/releases/download/v%version%/pack-v%version%-windows.zip",
+    "versionPrefix": "v"
   }
 ]
