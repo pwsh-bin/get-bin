@@ -387,5 +387,12 @@
     "repository": "smallstep/certificates",
     "uriTemplate": "https://github.com/smallstep/certificates/releases/download/v%version%/step-ca_windows_%version%_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "boringproxy",
+    "paths": [["boringproxy-windows-x86_64.exe", "boringproxy.exe", "version"]],
+    "repository": "boringproxy/boringproxy",
+    "uriTemplate": "https://github.com/boringproxy/boringproxy/releases/download/v%version%/boringproxy-windows-x86_64.exe",
+    "versionPrefix": "v"
   }
 ]
