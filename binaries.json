@@ -422,5 +422,12 @@
     "repository": "gotify/cli",
     "uriTemplate": "https://github.com/gotify/cli/releases/download/v%version%/gotify-cli-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "gotify",
+    "paths": [["gotify-windows-amd64.exe", "gotify.exe"]],
+    "repository": "gotify/server",
+    "uriTemplate": "https://github.com/gotify/server/releases/download/v%version%/gotify-windows-amd64.exe.zip",
+    "versionPrefix": "v"
   }
 ]
