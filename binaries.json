@@ -394,5 +394,12 @@
     "repository": "boringproxy/boringproxy",
     "uriTemplate": "https://github.com/boringproxy/boringproxy/releases/download/v%version%/boringproxy-windows-x86_64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "gauge",
+    "paths": [["gauge.exe", "gauge.exe", "version"]],
+    "repository": "getgauge/gauge",
+    "uriTemplate": "https://github.com/getgauge/gauge/releases/download/v%version%/gauge-%version%-windows.x86_64.zip",
+    "versionPrefix": "v"
   }
 ]
