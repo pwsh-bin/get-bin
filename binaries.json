@@ -415,5 +415,12 @@
     "repository": "muesli/beehive",
     "uriTemplate": "https://github.com/muesli/beehive/releases/download/v%version%/beehive_%version%_Windows_x86_64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "gotify-cli",
+    "paths": [["gotify-cli-windows-amd64.exe", "gotify-cli.exe", "version"]],
+    "repository": "gotify/cli",
+    "uriTemplate": "https://github.com/gotify/cli/releases/download/v%version%/gotify-cli-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
