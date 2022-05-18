@@ -457,5 +457,15 @@
     "repository": "buildpacks/pack",
     "uriTemplate": "https://github.com/buildpacks/pack/releases/download/v%version%/pack-v%version%-windows.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "tfsec",
+    "paths": [
+      ["tfsec-checkgen.exe", "tfsec-checkgen.exe"],
+      ["tfsec.exe", "tfsec.exe", "--version"]
+    ],
+    "repository": "aquasecurity/tfsec",
+    "uriTemplate": "https://github.com/aquasecurity/tfsec/releases/download/v%version%/tfsec_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
