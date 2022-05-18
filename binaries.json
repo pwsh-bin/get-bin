@@ -429,5 +429,12 @@
     "repository": "gotify/server",
     "uriTemplate": "https://github.com/gotify/server/releases/download/v%version%/gotify-windows-amd64.exe.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "up",
+    "paths": [["up.exe", "up.exe", "version"]],
+    "repository": "apex/up",
+    "uriTemplate": "https://github.com/apex/up/releases/download/v%version%/up_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
