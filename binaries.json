@@ -443,5 +443,12 @@
     "repository": "labstack/tunnel-client",
     "uriTemplate": "https://github.com/labstack/tunnel-client/releases/download/v%version%/tunnel_%version%_windows_64-bit.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "ninja",
+    "paths": [["ninja.exe", "ninja.exe", "--version"]],
+    "repository": "ninja-build/ninja",
+    "uriTemplate": "https://github.com/ninja-build/ninja/releases/download/v%version%/ninja-win.zip",
+    "versionPrefix": "v"
   }
 ]
