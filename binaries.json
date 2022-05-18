@@ -401,5 +401,12 @@
     "repository": "getgauge/gauge",
     "uriTemplate": "https://github.com/getgauge/gauge/releases/download/v%version%/gauge-%version%-windows.x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "upm",
+    "paths": [["upm.exe", "upm.exe", "--version"]],
+    "repository": "replit/upm",
+    "uriTemplate": "https://github.com/replit/upm/releases/download/v%version%/upm_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
