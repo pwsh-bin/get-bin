@@ -1,6 +1,6 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.2.0"
+${VERSION} = "v0.2.1"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -192,7 +192,7 @@ function DownloadFromGitHub {
   foreach (${path} in ${Paths}) {
     ${target} = Join-Path -Path ${directory} -ChildPath (${path}[0] -creplace "%version%", ${version})
     if (-not (Test-Path -PathType "Leaf" -Path ${target})) {
-      Write-Host "[WARN] Binary " + ${target} + " does not exists. Will skip it."
+      Write-Host ("[WARN] Binary " + ${target} + " does not exists. Will skip it.")
       continue
     }
     New-Item -Force -ItemType "HardLink" -Path (Join-Path -Path ${env:GH_GET_HOME} -ChildPath ${path}[1]) -Target ${target} | Out-Null
@@ -200,7 +200,7 @@ function DownloadFromGitHub {
     # New-Item -Force -Path ${APP_PATHS} -Name ${path}[1] -Value ${target} | Out-Null
     # New-ItemProperty -Force -Path (Join-Path -Path ${APP_PATHS} -ChildPath ${path}[1]) -Name "Path" -Value (Split-Path -Path ${target}) | Out-Null
     if (${path}.count -eq 3) {
-      ${command} = ${path}[1] + " " + ${path}[2]
+      ${command} = (${path}[1] + " " + ${path}[2])
       Invoke-Expression -Command ${command}
     }
   }
@@ -241,10 +241,10 @@ switch (${args}[0]) {
     ${uriTemplate} = ${object}.uriTemplate
     ${versionPrefix} = ${object}.versionPrefix
     if ((${objects}.count -gt 1) -and (${object}.binary.length -ne ${binary}.length)) {
-      Write-Host "[WARN] Found many supported binaries. Will proceed with " + ${object}.binary
+      Write-Host ("[WARN] Found many supported binaries. Will proceed with " + ${object}.binary)
     }
     elseif (${binary} -ne ${object}.binary) {
-      Write-Host "[WARN] Found supported binary. Will proceed with " + ${object}.binary
+      Write-Host ("[WARN] Found supported binary. Will proceed with " + ${object}.binary)
     }
     DownloadFromGitHub -Paths ${paths} -Repository ${repository} -UriTemplate ${uriTemplate} -Version ${version} -VersionPrefix ${versionPrefix}
   }
