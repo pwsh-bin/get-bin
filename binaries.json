@@ -467,5 +467,12 @@
     "repository": "aquasecurity/tfsec",
     "uriTemplate": "https://github.com/aquasecurity/tfsec/releases/download/v%version%/tfsec_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "bom",
+    "paths": [["bom-windows-amd64.exe", "bom.exe", "version"]],
+    "repository": "kubernetes-sigs/bom",
+    "uriTemplate": "https://github.com/kubernetes-sigs/bom/releases/download/v%version%/bom-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
