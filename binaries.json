@@ -474,5 +474,12 @@
     "repository": "kubernetes-sigs/bom",
     "uriTemplate": "https://github.com/kubernetes-sigs/bom/releases/download/v%version%/bom-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dockle",
+    "paths": [["dockle.exe", "dockle.exe", "--version"]],
+    "repository": "goodwithtech/dockle",
+    "uriTemplate": "https://github.com/goodwithtech/dockle/releases/download/v%version%/dockle_%version%_Windows-64bit.zip",
+    "versionPrefix": "v"
   }
 ]
