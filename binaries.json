@@ -481,5 +481,12 @@
     "repository": "goodwithtech/dockle",
     "uriTemplate": "https://github.com/goodwithtech/dockle/releases/download/v%version%/dockle_%version%_Windows-64bit.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "syft",
+    "paths": [["syft.exe", "syft.exe", "version"]],
+    "repository": "anchore/syft",
+    "uriTemplate": "https://github.com/anchore/syft/releases/download/v%version%/syft_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
