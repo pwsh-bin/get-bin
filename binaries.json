@@ -488,5 +488,12 @@
     "repository": "anchore/syft",
     "uriTemplate": "https://github.com/anchore/syft/releases/download/v%version%/syft_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "aqt",
+    "paths": [["aqt_x64.exe", "aqt.exe", "version"]],
+    "repository": "miurahr/aqtinstall",
+    "uriTemplate": "https://github.com/miurahr/aqtinstall/releases/download/v%version%/aqt_x64.exe",
+    "versionPrefix": "v"
   }
 ]
