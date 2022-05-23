@@ -1,11 +1,19 @@
 Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
-${VERSION} = "v0.2.1"
+# ${APP_PATHS} = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths"
+${DEBUG} = Test-Path -PathType "Container" -Path (Join-Path -Path ${PSScriptRoot} -ChildPath ".git")
+${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".gh-get"
+${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "gh-get.ps1"
+${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
+${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
+${VERSION} = "v0.3.0"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
 gh-get install helm@3.7     - install helm binary version 3.7
 gh-get list                 - list all supported binaries
+gh-get init                 - add binaries to current path
+gh-get setup                - add init to current profile
 
 ${VERSION}
 "@
@@ -14,17 +22,6 @@ if (${args}.count -eq 0) {
   Write-Host ${HELP}
   exit
 }
-
-${DEBUG} = Test-Path -PathType "Container" -Path (Join-Path -Path ${PSScriptRoot} -ChildPath ".git")
-
-${GITHUB_PATH} = Join-Path -Path ${env:GH_GET_HOME} -ChildPath ".github"
-
-${STORE_PATH} = Join-Path -Path ${env:GH_GET_HOME} -ChildPath ".store"
-if (-not (Test-Path -PathType "Container" -Path ${STORE_PATH})) {
-  New-Item -Force -ItemType "Directory" -Path ${STORE_PATH} | Out-Null
-}
-
-${APP_PATHS} = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths"
 
 function GetBinaries {
   if (${DEBUG}) {
@@ -158,6 +155,7 @@ function DownloadFromGitHub {
     return $null
   }
   ${version} = (${tag_name} -creplace ${VersionPrefix}, "")
+  New-Item -Force -ItemType "Directory" -Path ${STORE_PATH} | Out-Null
   ${directory} = Join-Path -Path ${STORE_PATH} -ChildPath ((${Repository} -creplace "/", "\") + "@${version}")
   if (-not (Test-Path -PathType "Container" -Path ${directory})) {
     New-Item -Force -ItemType "Directory" -Path ${directory} | Out-Null
@@ -195,12 +193,13 @@ function DownloadFromGitHub {
       Write-Host ("[WARN] Binary " + ${target} + " does not exists. Will skip it.")
       continue
     }
-    New-Item -Force -ItemType "HardLink" -Path (Join-Path -Path ${env:GH_GET_HOME} -ChildPath ${path}[1]) -Target ${target} | Out-Null
+    ${link} = (Join-Path -Path ${PS1_HOME} -ChildPath ${path}[1])
+    New-Item -Force -ItemType "HardLink" -Path ${link} -Target ${target} | Out-Null
     # TODO
     # New-Item -Force -Path ${APP_PATHS} -Name ${path}[1] -Value ${target} | Out-Null
     # New-ItemProperty -Force -Path (Join-Path -Path ${APP_PATHS} -ChildPath ${path}[1]) -Name "Path" -Value (Split-Path -Path ${target}) | Out-Null
     if (${path}.count -eq 3) {
-      ${command} = (${path}[1] + " " + ${path}[2])
+      ${command} = (${link} + " " + ${path}[2])
       Invoke-Expression -Command ${command}
     }
   }
@@ -251,6 +250,17 @@ switch (${args}[0]) {
   { $_ -in "l", "list" } {
     Write-Host ((GetBinaries
         | Select-Object -ExpandProperty "binary") -join "`n")
+  }
+  { $_ -in "init" } {
+    if (${env:PATH} -split ";" -cnotcontains ${PS1_HOME}) {
+      ${env:PATH} += ";${PS1_HOME}"
+    }
+  }
+  { $_ -in "setup" } {
+    ${value} = "${PS1_FILE} init"
+    if ((Select-String -Path ${PROFILE} -Pattern ${value} -SimpleMatch -CaseSensitive -Quiet).length -eq 0) {
+      Add-Content -Path ${PROFILE} -Value ${value}
+    }
   }
   default {
     Write-Host "[ERROR] Unsupported command argument."
