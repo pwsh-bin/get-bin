@@ -502,5 +502,18 @@
     "repository": "CycloneDX/cyclonedx-gomod",
     "uriTemplate": "https://github.com/CycloneDX/cyclonedx-gomod/releases/download/v%version%/cyclonedx-gomod_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "aria2c",
+    "paths": [
+      [
+        "aria2-%version%-win-64bit-build1\\aria2c.exe",
+        "aria2c.exe",
+        "--version"
+      ]
+    ],
+    "repository": "aria2/aria2",
+    "uriTemplate": "https://github.com/aria2/aria2/releases/download/release-%version%/aria2-%version%-win-64bit-build1.zip",
+    "versionPrefix": "release-"
   }
 ]
