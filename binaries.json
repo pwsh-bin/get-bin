@@ -515,5 +515,12 @@
     "repository": "aria2/aria2",
     "uriTemplate": "https://github.com/aria2/aria2/releases/download/release-%version%/aria2-%version%-win-64bit-build1.zip",
     "versionPrefix": "release-"
+  },
+  {
+    "binary": "vcpkg",
+    "paths": [["vcpkg.exe", "vcpkg.exe", "version"]],
+    "repository": "microsoft/vcpkg-tool",
+    "uriTemplate": "https://github.com/microsoft/vcpkg-tool/releases/download/%version%/vcpkg.exe",
+    "versionPrefix": ""
   }
 ]
