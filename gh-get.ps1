@@ -6,7 +6,7 @@ ${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".gh-get"
 ${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "gh-get.ps1"
 ${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
 ${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
-${VERSION} = "v0.3.0"
+${VERSION} = "v0.3.1"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -25,9 +25,7 @@ if (${args}.count -eq 0) {
 
 function GetBinaries {
   if (${DEBUG}) {
-    return (Get-Content -Path (Join-Path -Path ${PSScriptRoot} -ChildPath "binaries.json")
-    | ConvertFrom-Json
-    | Sort-Object -Property "binary")
+    return (Get-Content -Path (Join-Path -Path ${PSScriptRoot} -ChildPath "binaries.json") | ConvertFrom-Json | Sort-Object -Property "binary")
   }
   else {
     ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
@@ -87,8 +85,7 @@ function GetGitHubTagNameFromReleases {
     if (${releases}.count -eq 0) {
       return $null
     }
-    ${filtered_releases} = (${releases}
-      | Where-Object -Property "prerelease" -eq $false)
+    ${filtered_releases} = (${releases} | Where-Object -Property "prerelease" -eq $false)
     if ($null -ne ${filtered_releases}) {
       return ${filtered_releases}[0].tag_name
     }
@@ -123,8 +120,7 @@ function GetGitHubTagNameFromTags {
     if (${tags}.count -eq 0) {
       return $null
     }
-    ${filtered_tags} = (${tags}
-      | Where-Object -Property "name" -clike ${Pattern})
+    ${filtered_tags} = (${tags} | Where-Object -Property "name" -clike ${Pattern})
     if ($null -ne ${filtered_tags}) {
       return ${filtered_tags}[0].name
     }
@@ -228,8 +224,7 @@ switch (${args}[0]) {
       exit
     }
     ${binary}, ${version} = (${args}[1] -csplit "@")
-    ${objects} = (GetBinaries
-      | Where-Object -Property "binary" -clike "${binary}*")
+    ${objects} = (GetBinaries | Where-Object -Property "binary" -clike "${binary}*")
     if (${objects}.count -eq 0) {
       Write-Host "[ERROR] Unsupported binary argument."
       exit
@@ -248,8 +243,7 @@ switch (${args}[0]) {
     DownloadFromGitHub -Paths ${paths} -Repository ${repository} -UriTemplate ${uriTemplate} -Version ${version} -VersionPrefix ${versionPrefix}
   }
   { $_ -in "l", "list" } {
-    Write-Host ((GetBinaries
-        | Select-Object -ExpandProperty "binary") -join "`n")
+    Write-Host ((GetBinaries | Select-Object -ExpandProperty "binary") -join "`n")
   }
   { $_ -in "init" } {
     if (${env:PATH} -split ";" -cnotcontains ${PS1_HOME}) {
