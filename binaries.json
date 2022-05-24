@@ -495,5 +495,12 @@
     "repository": "miurahr/aqtinstall",
     "uriTemplate": "https://github.com/miurahr/aqtinstall/releases/download/v%version%/aqt_x64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "cyclonedx-gomod",
+    "paths": [["cyclonedx-gomod.exe", "cyclonedx-gomod.exe", "version"]],
+    "repository": "CycloneDX/cyclonedx-gomod",
+    "uriTemplate": "https://github.com/CycloneDX/cyclonedx-gomod/releases/download/v%version%/cyclonedx-gomod_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
