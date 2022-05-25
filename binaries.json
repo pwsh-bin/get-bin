@@ -531,5 +531,19 @@
     "repository": "dom96/choosenim",
     "uriTemplate": "https://github.com/dom96/choosenim/releases/download/v%version%/choosenim-%version%_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "rustup:msvc",
+    "paths": [["rustup-init.exe", "rustup-init.exe", "--version"]],
+    "repository": "rust-lang/rustup",
+    "uriTemplate": "https://static.rust-lang.org/rustup/archive/%version%/x86_64-pc-windows-msvc/rustup-init.exe",
+    "versionPrefix": ""
+  },
+  {
+    "binary": "rustup:gnu",
+    "paths": [["rustup-init.exe", "rustup-init.exe", "--version"]],
+    "repository": "rust-lang/rustup",
+    "uriTemplate": "https://static.rust-lang.org/rustup/archive/%version%/x86_64-pc-windows-gnu/rustup-init.exe",
+    "versionPrefix": ""
   }
 ]
