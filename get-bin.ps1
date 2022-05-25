@@ -2,18 +2,18 @@ Set-Variable -Name "ProgressPreference" -Value "SilentlyContinue"
 
 # ${APP_PATHS} = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths"
 ${DEBUG} = Test-Path -PathType "Container" -Path (Join-Path -Path ${PSScriptRoot} -ChildPath ".git")
-${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".gh-get"
-${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "gh-get.ps1"
+${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".get-bin"
+${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "get-bin.ps1"
 ${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
 ${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
-${VERSION} = "v0.3.2"
+${VERSION} = "v0.4.0"
 ${HELP} = @"
 Usage:
-gh-get self-install         - update gh-get to latest version
-gh-get install helm@3.7     - install helm binary version 3.7
-gh-get list                 - list all supported binaries
-gh-get init                 - add binaries to current path
-gh-get setup                - add init to current profile
+get-bin self-install         - update get-bin to latest version
+get-bin install helm@3.7     - install helm binary version 3.7
+get-bin list                 - list all supported binaries
+get-bin init                 - add binaries to current path
+get-bin setup                - add init to current profile
 
 ${VERSION}
 "@
@@ -28,7 +28,7 @@ function GetBinaries {
     return (Get-Content -Path (Join-Path -Path ${PSScriptRoot} -ChildPath "binaries.json") | ConvertFrom-Json | Sort-Object -Property "binary")
   }
   else {
-    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/binaries.json"
+    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/get-bin/main/binaries.json"
     ${binaries} = $null
     if (${DEBUG}) {
       Write-Host "[DEBUG] GET ${uri}"
@@ -203,7 +203,7 @@ function DownloadFromGitHub {
 
 switch (${args}[0]) {
   { $_ -in "si", "self-install" } {
-    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/gh-get/main/install.ps1"
+    ${uri} = "https://raw.githubusercontent.com/pwsh-bin/get-bin/main/install.ps1"
     ${command} = $null
     if (${DEBUG}) {
       Write-Host "[DEBUG] GET ${uri}"
@@ -251,9 +251,12 @@ switch (${args}[0]) {
     }
   }
   { $_ -in "setup" } {
-    ${value} = "${PS1_FILE} init"
-    if ((Select-String -Path ${PROFILE} -Pattern ${value} -SimpleMatch -CaseSensitive -Quiet).Length -eq 0) {
+    ${value} = "& '${PS1_FILE}' init"
+    if (((Get-Content -Path ${PROFILE}) -split "`n") -cnotcontains ${value}) {
       Add-Content -Path ${PROFILE} -Value ${value}
+      if (${DEBUG}) {
+        Write-Host "[DEBUG] ${PROFILE}"
+      }
     }
   }
   default {
