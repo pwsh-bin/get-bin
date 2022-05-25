@@ -6,7 +6,7 @@ ${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".gh-get"
 ${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "gh-get.ps1"
 ${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
 ${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
-${VERSION} = "v0.3.1"
+${VERSION} = "v0.3.2"
 ${HELP} = @"
 Usage:
 gh-get self-install         - update gh-get to latest version
@@ -18,7 +18,7 @@ gh-get setup                - add init to current profile
 ${VERSION}
 "@
 
-if (${args}.count -eq 0) {
+if (${args}.Count -eq 0) {
   Write-Host ${HELP}
   exit
 }
@@ -82,7 +82,7 @@ function GetGitHubTagNameFromReleases {
       Write-Host $_
       exit
     }
-    if (${releases}.count -eq 0) {
+    if (${releases}.Count -eq 0) {
       return $null
     }
     ${filtered_releases} = (${releases} | Where-Object -Property "prerelease" -eq $false)
@@ -117,7 +117,7 @@ function GetGitHubTagNameFromTags {
       Write-Host $_
       exit
     }
-    if (${tags}.count -eq 0) {
+    if (${tags}.Count -eq 0) {
       return $null
     }
     ${filtered_tags} = (${tags} | Where-Object -Property "name" -clike ${Pattern})
@@ -156,8 +156,8 @@ function DownloadFromGitHub {
   if (-not (Test-Path -PathType "Container" -Path ${directory})) {
     New-Item -Force -ItemType "Directory" -Path ${directory} | Out-Null
     ${uri} = (${UriTemplate} -creplace "%version%", ${version})
-    ${filename} = (${uri} -csplit "/")[-1]
-    ${outfile} = "${directory}/${filename}"
+    ${filename} = ${uri}.SubString(${uri}.LastIndexOf("/") + 1)
+    ${outfile} = Join-Path -Path ${directory} -ChildPath ${filename}
     if (${DEBUG}) {
       Write-Host "[DEBUG] GET ${uri}"
     }
@@ -177,7 +177,7 @@ function DownloadFromGitHub {
     elseif (${filename}.EndsWith(".tar.gz")) {
       ${is_archive} = $true
       ${command} = "tar --extract --file ${outfile} --directory ${directory}"
-      Invoke-Expression -Command ${command}
+      Invoke-Expression -Command ${command} | Out-Null
     }
     if (${is_archive} -eq $true) {
       Remove-Item -Force -Path ${outfile}
@@ -194,7 +194,7 @@ function DownloadFromGitHub {
     # TODO
     # New-Item -Force -Path ${APP_PATHS} -Name ${path}[1] -Value ${target} | Out-Null
     # New-ItemProperty -Force -Path (Join-Path -Path ${APP_PATHS} -ChildPath ${path}[1]) -Name "Path" -Value (Split-Path -Path ${target}) | Out-Null
-    if (${path}.count -eq 3) {
+    if (${path}.Count -eq 3) {
       ${command} = (${link} + " " + ${path}[2])
       Invoke-Expression -Command ${command}
     }
@@ -219,13 +219,13 @@ switch (${args}[0]) {
     Invoke-Expression -Command ${command}
   }
   { $_ -in "i", "install" } {
-    if (${args}.count -eq 1) {
+    if (${args}.Count -eq 1) {
       Write-Host "[ERROR] Missing binary argument."
       exit
     }
     ${binary}, ${version} = (${args}[1] -csplit "@")
     ${objects} = (GetBinaries | Where-Object -Property "binary" -clike "${binary}*")
-    if (${objects}.count -eq 0) {
+    if (${objects}.Count -eq 0) {
       Write-Host "[ERROR] Unsupported binary argument."
       exit
     }
@@ -234,7 +234,7 @@ switch (${args}[0]) {
     ${repository} = ${object}.repository
     ${uriTemplate} = ${object}.uriTemplate
     ${versionPrefix} = ${object}.versionPrefix
-    if ((${objects}.count -gt 1) -and (${object}.binary.length -ne ${binary}.length)) {
+    if ((${objects}.Count -gt 1) -and (${object}.binary.Length -ne ${binary}.Length)) {
       Write-Host ("[WARN] Found many supported binaries. Will proceed with " + ${object}.binary)
     }
     elseif (${binary} -ne ${object}.binary) {
@@ -252,7 +252,7 @@ switch (${args}[0]) {
   }
   { $_ -in "setup" } {
     ${value} = "${PS1_FILE} init"
-    if ((Select-String -Path ${PROFILE} -Pattern ${value} -SimpleMatch -CaseSensitive -Quiet).length -eq 0) {
+    if ((Select-String -Path ${PROFILE} -Pattern ${value} -SimpleMatch -CaseSensitive -Quiet).Length -eq 0) {
       Add-Content -Path ${PROFILE} -Value ${value}
     }
   }
