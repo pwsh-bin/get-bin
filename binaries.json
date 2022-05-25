@@ -522,5 +522,14 @@
     "repository": "microsoft/vcpkg-tool",
     "uriTemplate": "https://github.com/microsoft/vcpkg-tool/releases/download/%version%/vcpkg.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "choosenim",
+    "paths": [
+      ["choosenim-%version%_windows_amd64.exe", "choosenim.exe", "--version"]
+    ],
+    "repository": "dom96/choosenim",
+    "uriTemplate": "https://github.com/dom96/choosenim/releases/download/v%version%/choosenim-%version%_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
