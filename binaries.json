@@ -545,5 +545,31 @@
     "repository": "Schniz/fnm",
     "uriTemplate": "https://github.com/Schniz/fnm/releases/download/v%version%/fnm-windows.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "wasmtime:msvc",
+    "paths": [
+      [
+        "wasmtime-v%version%-x86_64-windows\\wasmtime.exe",
+        "wasmtime.exe",
+        "--version"
+      ]
+    ],
+    "repository": "bytecodealliance/wasmtime",
+    "uriTemplate": "https://github.com/bytecodealliance/wasmtime/releases/download/v%version%/wasmtime-v%version%-x86_64-windows.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "wasmtime:gnu",
+    "paths": [
+      [
+        "wasmtime-v%version%-x86_64-mingw\\wasmtime.exe",
+        "wasmtime.exe",
+        "--version"
+      ]
+    ],
+    "repository": "bytecodealliance/wasmtime",
+    "uriTemplate": "https://github.com/bytecodealliance/wasmtime/releases/download/v%version%/wasmtime-v%version%-x86_64-mingw.zip",
+    "versionPrefix": "v"
   }
 ]
