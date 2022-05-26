@@ -6,7 +6,8 @@ ${PS1_HOME} = Join-Path -Path ${HOME} -ChildPath ".get-bin"
 ${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "get-bin.ps1"
 ${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
 ${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
-${VERSION} = "v0.4.0"
+${7ZIP} = Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath "7-Zip" -AdditionalChildPath "7z.exe"
+${VERSION} = "v0.4.1"
 ${HELP} = @"
 Usage:
 get-bin self-install         - update get-bin to latest version
@@ -127,11 +128,9 @@ function GetGitHubTagNameFromTags {
   }
 }
 
-function DownloadFromGitHub {
+function GetVersionFromGitHub {
   param (
-    ${Paths},
     ${Repository},
-    ${UriTemplate},
     ${Version},
     ${VersionPrefix}
   )
@@ -148,9 +147,21 @@ function DownloadFromGitHub {
     ${tag_name} = (GetGitHubTagNameFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "${VersionPrefix}${Version}*")
   }
   if ($null -eq ${tag_name}) {
-    return $null
+    Write-Host "[ERROR] Unsupported version argument."
+    exit
   }
-  ${version} = (${tag_name} -creplace ${VersionPrefix}, "")
+  return (${tag_name} -creplace ${VersionPrefix}, "")
+}
+
+function DownloadFromGitHub {
+  param (
+    ${Paths},
+    ${Repository},
+    ${UriTemplate},
+    ${Version},
+    ${VersionPrefix}
+  )
+  ${version} = (GetVersionFromGitHub -Repository ${Repository} -Version ${Version} -VersionPrefix ${VersionPrefix})
   New-Item -Force -ItemType "Directory" -Path ${STORE_PATH} | Out-Null
   ${directory} = Join-Path -Path ${STORE_PATH} -ChildPath ((${Repository} -creplace "/", "\") + "@${version}")
   if (-not (Test-Path -PathType "Container" -Path ${directory})) {
@@ -177,6 +188,11 @@ function DownloadFromGitHub {
     elseif (${filename}.EndsWith(".tar.gz")) {
       ${is_archive} = $true
       ${command} = "tar --extract --file ${outfile} --directory ${directory}"
+      Invoke-Expression -Command ${command} | Out-Null
+    }
+    elseif (${filename}.EndsWith(".7z")) {
+      ${is_archive} = $true
+      ${command} = "& '${7ZIP}' x -y -o${directory} ${outfile}"
       Invoke-Expression -Command ${command} | Out-Null
     }
     if (${is_archive} -eq $true) {
