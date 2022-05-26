@@ -538,5 +538,12 @@
     "repository": "rust-lang/rustup",
     "uriTemplate": "https://static.rust-lang.org/rustup/archive/%version%/x86_64-pc-windows-gnu/rustup-init.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "fnm",
+    "paths": [["fnm.exe", "fnm.exe", "--version"]],
+    "repository": "Schniz/fnm",
+    "uriTemplate": "https://github.com/Schniz/fnm/releases/download/v%version%/fnm-windows.zip",
+    "versionPrefix": "v"
   }
 ]
