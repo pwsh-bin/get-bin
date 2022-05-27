@@ -7,7 +7,7 @@ ${PS1_FILE} = Join-Path -Path ${PS1_HOME} -ChildPath "get-bin.ps1"
 ${GITHUB_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".github"
 ${STORE_PATH} = Join-Path -Path ${PS1_HOME} -ChildPath ".store"
 ${7ZIP} = Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath "7-Zip" -AdditionalChildPath "7z.exe"
-${VERSION} = "v0.4.1"
+${VERSION} = "v0.4.2"
 ${HELP} = @"
 Usage:
 get-bin self-install         - update get-bin to latest version
@@ -83,13 +83,11 @@ function GetGitHubTagNameFromReleases {
       Write-Host $_
       exit
     }
-    if (${releases}.Count -eq 0) {
+    ${filtered_releases} = (${releases} | Where-Object -Property "prerelease" -eq $false)
+    if (${filtered_releases}.Count -eq 0) {
       return $null
     }
-    ${filtered_releases} = (${releases} | Where-Object -Property "prerelease" -eq $false)
-    if ($null -ne ${filtered_releases}) {
-      return ${filtered_releases}[0].tag_name
-    }
+    return ${filtered_releases}[0].tag_name
   }
 }
 
@@ -118,13 +116,11 @@ function GetGitHubTagNameFromTags {
       Write-Host $_
       exit
     }
-    if (${tags}.Count -eq 0) {
+    ${filtered_tags} = (${tags} | Where-Object -Property "name" -clike ${Pattern})
+    if (${filtered_tags}.Count -eq 0) {
       return $null
     }
-    ${filtered_tags} = (${tags} | Where-Object -Property "name" -clike ${Pattern})
-    if ($null -ne ${filtered_tags}) {
-      return ${filtered_tags}[0].name
-    }
+    return ${filtered_tags}[0].name
   }
 }
 
