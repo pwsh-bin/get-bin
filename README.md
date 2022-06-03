@@ -9,11 +9,12 @@ irm "https://raw.githubusercontent.com/pwsh-bin/get-bin/main/install.ps1" | iex
 ### usage
 
 ```powershell
-get-bin self-install         - update get-bin to latest version
-get-bin install helm@3.7     - install helm binary version 3.7
-get-bin list                 - list all supported binaries
-get-bin init                 - add binaries to current path
-get-bin setup                - add init to current profile
+get-bin self-install                  - update get-bin to latest version
+get-bin install helm@3.7              - install helm binary version 3.7
+get-bin list-supported helm           - list all supported helm versions
+get-bin list-supported                - list all supported binaries
+get-bin init                          - add binaries to current path
+get-bin setup                         - add init to current profile
 ```
 
 ### example
