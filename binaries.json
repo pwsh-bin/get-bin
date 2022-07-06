@@ -571,5 +571,12 @@
     "repository": "bytecodealliance/wasmtime",
     "uriTemplate": "https://github.com/bytecodealliance/wasmtime/releases/download/v%version%/wasmtime-v%version%-x86_64-mingw.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "bazelisk",
+    "paths": [["bazelisk-windows-amd64.exe", "bazelisk.exe", "version"]],
+    "repository": "bazelbuild/bazelisk",
+    "uriTemplate": "https://github.com/bazelbuild/bazelisk/releases/download/v%version%/bazelisk-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
