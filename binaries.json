@@ -52,14 +52,14 @@
     "binary": "packer",
     "paths": [["packer.exe", "packer.exe", "version"]],
     "repository": "hashicorp/packer",
-    "uriTemplate": "https://hashicorp-releases.website.yandexcloud.net/packer/%version%/packer_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/packer/%version%/packer_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "terraform",
     "paths": [["terraform.exe", "terraform.exe", "version"]],
     "repository": "hashicorp/terraform",
-    "uriTemplate": "https://hashicorp-releases.website.yandexcloud.net/terraform/%version%/terraform_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/terraform/%version%/terraform_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
