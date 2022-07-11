@@ -8,7 +8,7 @@ ${GITHUB_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".github")
 ${STORE_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".store")
 ${7ZIP} = (Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath (Join-Path -Path "7-Zip" -ChildPath "7z.exe"))
 ${PER_PAGE} = 100
-${VERSION} = "v0.5.0"
+${VERSION} = "v0.5.1"
 ${HELP} = @"
 Usage:
 get-bin self-install                  - update get-bin to latest version
@@ -21,8 +21,33 @@ get-bin setup                         - add init to current profile
 ${VERSION}
 "@
 
+# NOTE: common
 if (${args}.Count -eq 0) {
   Write-Host ${HELP}
+  if ((${Env:Path} -split ";") -cnotcontains ${PS1_HOME}) {
+    Write-Host @"
+---------------------------------------------------------
+The script are not found in the current PATH, please run:
+> ${PS1_HOME} init
+---------------------------------------------------------
+"@
+  }
+  if (${PSVersionTable}.PSVersion.Major -lt 7) {
+    Write-Host @"
+-----------------------------------------------------------------
+The PowerShell Core is preferable to use this script, please run:
+> winget install Microsoft.PowerShell
+-----------------------------------------------------------------
+"@
+  }
+  if ((Get-ExecutionPolicy -Scope "LocalMachine") -ne "RemoteSigned") {
+    Write-Host @"
+-------------------------------------------------------------------------------
+The RemoteSigned execution policy is preferable to use this script, please run:
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+-------------------------------------------------------------------------------
+"@
+  }
   exit
 }
 
@@ -51,8 +76,10 @@ function GetGitHubToken {
   if (Test-Path -PathType "Leaf" -Path ${GITHUB_PATH}) {
     return (Import-Clixml -Path ${GITHUB_PATH})
   }
-  Write-Host "Generate GitHub API Token w/o expiration and any scope: https://github.com/settings/tokens/new"
-  Write-Host "Paste GitHub API Token:"
+  Write-Host @"
+Generate GitHub API Token w/o expiration and public_repo scope: https://github.com/settings/tokens/new
+Enter GitHub API Token:
+"@
   ${token} = (Read-Host -AsSecureString)
   Export-Clixml -InputObject ${token} -Path ${GITHUB_PATH}
   return ${token}
@@ -74,7 +101,11 @@ function GetGitHubTagNamesFromReleases {
       Write-Host "[DEBUG] GET ${uri}"
     }
     try {
-      ${releases} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Authentication "Bearer" -Token ${Token} -Body @{
+      # NOTE: compat
+      ${headers} = @{
+        "Authentication" = ("Bearer " + ${Token})
+      }
+      ${releases} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Headers ${headers} -Body @{
           "per_page" = ${PER_PAGE}
           "page"     = ${page}
         })
@@ -110,7 +141,11 @@ function GetGitHubTagNamesFromTags {
       Write-Host "[DEBUG] GET ${uri}"
     }
     try {
-      ${tags} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Authentication "Bearer" -Token ${Token} -Body @{
+      # NOTE: compat
+      ${headers} = @{
+        "Authentication" = ("Bearer " + ${Token})
+      }
+      ${tags} = (Invoke-RestMethod -Method "Get" -Uri ${uri} -Headers ${headers} -Body @{
           "per_page" = ${PER_PAGE}
           "page"     = ${page}
         })
@@ -291,11 +326,13 @@ switch (${args}[0]) {
     Write-Host ((GetVersions -Object (GetObject -Binary ${binary}) -Version ${version}) -join "`n")
   }
   { $_ -in "init" } {
-    if (${env:PATH} -split ";" -cnotcontains ${PS1_HOME}) {
-      ${env:PATH} += ";${PS1_HOME}"
+    if ((${Env:Path} -split ";") -cnotcontains ${PS1_HOME}) {
+      ${Env:Path} += ";${PS1_HOME}"
     }
   }
+  # NOTE: common
   { $_ -in "setup" } {
+    New-Item -Force -ItemType "File" -Path ${PROFILE} | Out-Null
     ${value} = "& '${PS1_FILE}' init"
     if (((Get-Content -Path ${PROFILE}) -split "`n") -cnotcontains ${value}) {
       Add-Content -Path ${PROFILE} -Value ${value}
