@@ -585,5 +585,12 @@
     "repository": "hashicorp/consul",
     "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/consul/%version%/consul_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "vault",
+    "paths": [["vault.exe", "vault.exe", "version"]],
+    "repository": "hashicorp/vault",
+    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/vault/%version%/vault_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
