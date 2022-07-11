@@ -592,5 +592,12 @@
     "repository": "hashicorp/vault",
     "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/vault/%version%/vault_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "nomad",
+    "paths": [["nomad.exe", "nomad.exe", "version"]],
+    "repository": "hashicorp/nomad",
+    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/nomad/%version%/nomad_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
