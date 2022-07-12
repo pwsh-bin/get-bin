@@ -627,5 +627,12 @@
     "repository": "jpmens/jo",
     "uriTemplate": "https://github.com/jpmens/jo/releases/download/%version%/jo.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "fx",
+    "paths": [["fx_windows_amd64.exe", "fx.exe", "--version"]],
+    "repository": "antonmedv/fx",
+    "uriTemplate": "https://github.com/antonmedv/fx/releases/download/%version%/fx_windows_amd64.exe",
+    "versionPrefix": ""
   }
 ]
