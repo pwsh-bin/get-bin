@@ -606,5 +606,12 @@
     "repository": "stedolan/jq",
     "uriTemplate": "https://github.com/stedolan/jq/releases/download/jq-%version%/jq-win64.exe",
     "versionPrefix": "jq-"
+  },
+  {
+    "binary": "yq",
+    "paths": [["yq_windows_amd64.exe", "yq.exe", "--version"]],
+    "repository": "mikefarah/yq",
+    "uriTemplate": "https://github.com/mikefarah/yq/releases/download/v%version%/yq_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
