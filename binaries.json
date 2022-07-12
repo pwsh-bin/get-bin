@@ -613,5 +613,12 @@
     "repository": "mikefarah/yq",
     "uriTemplate": "https://github.com/mikefarah/yq/releases/download/v%version%/yq_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "cloc",
+    "paths": [["cloc-%version%.exe", "cloc.exe", "--version"]],
+    "repository": "AlDanial/cloc",
+    "uriTemplate": "https://github.com/AlDanial/cloc/releases/download/v%version%/cloc-%version%.exe",
+    "versionPrefix": "v"
   }
 ]
