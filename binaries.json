@@ -599,5 +599,12 @@
     "repository": "hashicorp/nomad",
     "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/nomad/%version%/nomad_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "jq",
+    "paths": [["jq-win64.exe", "jq.exe", "--version"]],
+    "repository": "stedolan/jq",
+    "uriTemplate": "https://github.com/stedolan/jq/releases/download/jq-%version%/jq-win64.exe",
+    "versionPrefix": "jq-"
   }
 ]
