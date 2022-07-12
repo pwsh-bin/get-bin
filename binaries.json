@@ -620,5 +620,12 @@
     "repository": "AlDanial/cloc",
     "uriTemplate": "https://github.com/AlDanial/cloc/releases/download/v%version%/cloc-%version%.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "jo",
+    "paths": [["jo.exe", "jo.exe", "-v"]],
+    "repository": "jpmens/jo",
+    "uriTemplate": "https://github.com/jpmens/jo/releases/download/%version%/jo.exe",
+    "versionPrefix": ""
   }
 ]
