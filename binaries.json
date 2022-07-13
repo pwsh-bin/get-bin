@@ -634,5 +634,12 @@
     "repository": "antonmedv/fx",
     "uriTemplate": "https://github.com/antonmedv/fx/releases/download/%version%/fx_windows_amd64.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "tunnelto",
+    "paths": [["tunnelto-windows.exe", "tunnelto.exe", "--version"]],
+    "repository": "agrinman/tunnelto",
+    "uriTemplate": "https://github.com/agrinman/tunnelto/releases/download/%version%/tunnelto-windows.exe",
+    "versionPrefix": ""
   }
 ]
