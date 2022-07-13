@@ -641,5 +641,12 @@
     "repository": "agrinman/tunnelto",
     "uriTemplate": "https://github.com/agrinman/tunnelto/releases/download/%version%/tunnelto-windows.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "bore",
+    "paths": [["bore.exe", "bore.exe", "--version"]],
+    "repository": "ekzhang/bore",
+    "uriTemplate": "https://github.com/ekzhang/bore/releases/download/v%version%/bore-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
