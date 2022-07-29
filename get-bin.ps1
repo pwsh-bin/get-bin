@@ -8,7 +8,7 @@ ${GITHUB_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".github")
 ${STORE_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".store")
 ${7ZIP} = (Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath (Join-Path -Path "7-Zip" -ChildPath "7z.exe"))
 ${PER_PAGE} = 100
-${VERSION} = "v0.5.2"
+${VERSION} = "v0.6.0"
 ${HELP} = @"
 Usage:
 get-bin self-install                  - update get-bin to latest version
@@ -223,7 +223,7 @@ function Install {
     ${version} = ${versions}[0]
   }
   New-Item -Force -ItemType "Directory" -Path ${STORE_PATH} | Out-Null
-  ${directory} = (Join-Path -Path ${STORE_PATH} -ChildPath ((${Object}.repository -creplace "/", "\") + "@${version}"))
+  ${directory} = (Join-Path -Path ${STORE_PATH} -ChildPath (${Object}.binary + "@${version}"))
   if (-not (Test-Path -PathType "Container" -Path ${directory})) {
     New-Item -Force -ItemType "Directory" -Path ${directory} | Out-Null
     ${uri} = (${Object}.uriTemplate -creplace "%version%", ${version})
