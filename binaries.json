@@ -742,5 +742,31 @@
     "repository": "sharkdp/hyperfine",
     "uriTemplate": "https://github.com/sharkdp/hyperfine/releases/download/v%version%/hyperfine-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "hexyl:gnu",
+    "paths": [
+      [
+        "hexyl-v%version%-x86_64-pc-windows-gnu/hexyl.exe",
+        "hexyl.exe",
+        "--version"
+      ]
+    ],
+    "repository": "sharkdp/hexyl",
+    "uriTemplate": "https://github.com/sharkdp/hexyl/releases/download/v%version%/hexyl-v%version%-x86_64-pc-windows-gnu.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "hexyl:msvc",
+    "paths": [
+      [
+        "hexyl-v%version%-x86_64-pc-windows-msvc/hexyl.exe",
+        "hexyl.exe",
+        "--version"
+      ]
+    ],
+    "repository": "sharkdp/hexyl",
+    "uriTemplate": "https://github.com/sharkdp/hexyl/releases/download/v%version%/hexyl-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
