@@ -768,5 +768,14 @@
     "repository": "sharkdp/hexyl",
     "uriTemplate": "https://github.com/sharkdp/hexyl/releases/download/v%version%/hexyl-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "xh",
+    "paths": [
+      ["xh-v%version%-x86_64-pc-windows-msvc/xh.exe", "xh.exe", "--version"]
+    ],
+    "repository": "ducaale/xh",
+    "uriTemplate": "https://github.com/ducaale/xh/releases/download/v%version%/xh-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
