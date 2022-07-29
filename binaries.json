@@ -784,5 +784,14 @@
     "repository": "oras-project/oras",
     "uriTemplate": "https://github.com/oras-project/oras/releases/download/v%version%/oras_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "talosctl",
+    "paths": [
+      ["talosctl-windows-amd64.exe", "talosctl.exe", "version --client"]
+    ],
+    "repository": "siderolabs/talos",
+    "uriTemplate": "https://github.com/siderolabs/talos/releases/download/v%version%/talosctl-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
