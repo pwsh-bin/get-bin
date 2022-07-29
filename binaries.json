@@ -842,5 +842,12 @@
     "repository": "goreleaser/nfpm",
     "uriTemplate": "https://github.com/goreleaser/nfpm/releases/download/v%version%/nfpm_%version%_Windows_x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dapr",
+    "paths": [["dapr.exe", "dapr.exe", "--version"]],
+    "repository": "dapr/cli",
+    "uriTemplate": "https://github.com/dapr/cli/releases/download/v%version%/dapr_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
