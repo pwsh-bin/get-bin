@@ -680,5 +680,23 @@
     "repository": "jsontypedef/json-typedef-fuzz",
     "uriTemplate": "https://github.com/jsontypedef/json-typedef-fuzz/releases/download/v%version%/x86_64-pc-windows-gnu.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "fd:gnu",
+    "paths": [
+      ["fd-v%version%-x86_64-pc-windows-gnu/fd.exe", "fd.exe", "--version"]
+    ],
+    "repository": "sharkdp/fd",
+    "uriTemplate": "https://github.com/sharkdp/fd/releases/download/v%version%/fd-v%version%-x86_64-pc-windows-gnu.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "fd:msvc",
+    "paths": [
+      ["fd-v%version%-x86_64-pc-windows-msvc/fd.exe", "fd.exe", "--version"]
+    ],
+    "repository": "sharkdp/fd",
+    "uriTemplate": "https://github.com/sharkdp/fd/releases/download/v%version%/fd-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
