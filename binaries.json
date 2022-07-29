@@ -698,5 +698,23 @@
     "repository": "sharkdp/fd",
     "uriTemplate": "https://github.com/sharkdp/fd/releases/download/v%version%/fd-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "bat:gnu",
+    "paths": [
+      ["bat-v%version%-x86_64-pc-windows-gnu/bat.exe", "bat.exe", "--version"]
+    ],
+    "repository": "sharkdp/bat",
+    "uriTemplate": "https://github.com/sharkdp/bat/releases/download/v%version%/bat-v%version%-x86_64-pc-windows-gnu.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "bat:msvc",
+    "paths": [
+      ["bat-v%version%-x86_64-pc-windows-msvc/bat.exe", "bat.exe", "--version"]
+    ],
+    "repository": "sharkdp/bat",
+    "uriTemplate": "https://github.com/sharkdp/bat/releases/download/v%version%/bat-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
