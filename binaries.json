@@ -856,5 +856,12 @@
     "repository": "rancher/cli",
     "uriTemplate": "https://github.com/rancher/cli/releases/download/v%version%/rancher-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "sops",
+    "paths": [["sops-v%version%.exe", "sops.exe", "--version"]],
+    "repository": "mozilla/sops",
+    "uriTemplate": "https://github.com/mozilla/sops/releases/download/v%version%/sops-v%version%.exe",
+    "versionPrefix": "v"
   }
 ]
