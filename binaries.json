@@ -793,5 +793,12 @@
     "repository": "siderolabs/talos",
     "uriTemplate": "https://github.com/siderolabs/talos/releases/download/v%version%/talosctl-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "centrifugo",
+    "paths": [["centrifugo.exe", "centrifugo.exe", "version"]],
+    "repository": "centrifugal/centrifugo",
+    "uriTemplate": "https://github.com/centrifugal/centrifugo/releases/download/v%version%/centrifugo_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
