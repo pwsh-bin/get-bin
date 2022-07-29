@@ -800,5 +800,14 @@
     "repository": "centrifugal/centrifugo",
     "uriTemplate": "https://github.com/centrifugal/centrifugo/releases/download/v%version%/centrifugo_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "toxiproxy-cli",
+    "paths": [
+      ["toxiproxy-cli-windows-amd64.exe", "toxiproxy-cli.exe", "--version"]
+    ],
+    "repository": "Shopify/toxiproxy",
+    "uriTemplate": "https://github.com/Shopify/toxiproxy/releases/download/v%version%/toxiproxy-cli-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
