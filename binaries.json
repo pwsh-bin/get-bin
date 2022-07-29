@@ -716,5 +716,31 @@
     "repository": "sharkdp/bat",
     "uriTemplate": "https://github.com/sharkdp/bat/releases/download/v%version%/bat-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "hyperfine:gnu",
+    "paths": [
+      [
+        "hyperfine-v%version%-x86_64-pc-windows-gnu/hyperfine.exe",
+        "hyperfine.exe",
+        "--version"
+      ]
+    ],
+    "repository": "sharkdp/hyperfine",
+    "uriTemplate": "https://github.com/sharkdp/hyperfine/releases/download/v%version%/hyperfine-v%version%-x86_64-pc-windows-gnu.zip",
+    "versionPrefix": "v"
+  },
+  {
+    "binary": "hyperfine:msvc",
+    "paths": [
+      [
+        "hyperfine-v%version%-x86_64-pc-windows-msvc/hyperfine.exe",
+        "hyperfine.exe",
+        "--version"
+      ]
+    ],
+    "repository": "sharkdp/hyperfine",
+    "uriTemplate": "https://github.com/sharkdp/hyperfine/releases/download/v%version%/hyperfine-v%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
