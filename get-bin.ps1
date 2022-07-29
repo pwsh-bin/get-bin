@@ -8,7 +8,7 @@ ${GITHUB_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".github")
 ${STORE_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".store")
 ${7ZIP} = (Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath (Join-Path -Path "7-Zip" -ChildPath "7z.exe"))
 ${PER_PAGE} = 100
-${VERSION} = "v0.5.1"
+${VERSION} = "v0.5.2"
 ${HELP} = @"
 Usage:
 get-bin self-install                  - update get-bin to latest version
@@ -90,7 +90,8 @@ function GetGitHubTagNamesFromReleases {
   param (
     ${RepositoryUri},
     ${Token},
-    ${Pattern}
+    ${Pattern},
+    ${Prerelease}
   )
   ${page} = 0
   ${uri} = "${RepositoryUri}/releases"
@@ -118,7 +119,7 @@ function GetGitHubTagNamesFromReleases {
     if (${releases}.Length -eq 0) {
       return $null
     }
-    ${result} = (${releases} | Where-Object -FilterScript { ($_.prerelease -eq $false) -and ($_.tag_name -cmatch ${Pattern}) } | Select-Object -ExpandProperty "tag_name")
+    ${result} = (${releases} | Where-Object -FilterScript { ($_.prerelease -eq ${Prerelease}) -and ($_.tag_name -cmatch ${Pattern}) } | Select-Object -ExpandProperty "tag_name")
     if (${result}.Length -ne 0) {
       return ${result}
     }
@@ -176,9 +177,12 @@ function GetGitHubTagNames {
   ${token} = (GetGitHubToken)
   ${tag_names} = $null
   if ($null -eq ${Version}) {
-    ${tag_names} = (GetGitHubTagNamesFromReleases -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}[-TZ\.\d]*$")
+    ${tag_names} = (GetGitHubTagNamesFromReleases -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}.*$" -Prerelease $false)
     if ($null -eq ${tag_names}) {
-      ${tag_names} = (GetGitHubTagNamesFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}[-TZ\.\d]*$")
+      ${tag_names} = (GetGitHubTagNamesFromReleases -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}.*$" -Prerelease $true)
+      if ($null -eq ${tag_names}) {
+        ${tag_names} = (GetGitHubTagNamesFromTags -RepositoryUri ${repository_uri} -Token ${token} -Pattern "^${VersionPrefix}[-TZ\.\d]*$")
+      }
     }
   }
   else {
