@@ -849,5 +849,12 @@
     "repository": "dapr/cli",
     "uriTemplate": "https://github.com/dapr/cli/releases/download/v%version%/dapr_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "rancher",
+    "paths": [["rancher-v%version%/rancher.exe", "rancher.exe", "--version"]],
+    "repository": "rancher/cli",
+    "uriTemplate": "https://github.com/rancher/cli/releases/download/v%version%/rancher-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
