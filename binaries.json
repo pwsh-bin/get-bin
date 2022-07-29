@@ -863,5 +863,12 @@
     "repository": "mozilla/sops",
     "uriTemplate": "https://github.com/mozilla/sops/releases/download/v%version%/sops-v%version%.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "sinker",
+    "paths": [["sinker-windows-amd64", "sinker.exe", "--version"]],
+    "repository": "plexsystems/sinker",
+    "uriTemplate": "https://github.com/plexsystems/sinker/releases/download/v%version%/sinker-windows-amd64",
+    "versionPrefix": "v"
   }
 ]
