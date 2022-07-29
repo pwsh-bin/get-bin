@@ -828,5 +828,12 @@
     "repository": "GoogleContainerTools/container-diff",
     "uriTemplate": "https://github.com/GoogleContainerTools/container-diff/releases/download/v%version%/container-diff-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "kubeaudit",
+    "paths": [["kubeaudit.exe", "kubeaudit.exe", "version"]],
+    "repository": "Shopify/kubeaudit",
+    "uriTemplate": "https://github.com/Shopify/kubeaudit/releases/download/v%version%/kubeaudit_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
