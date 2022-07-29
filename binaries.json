@@ -648,5 +648,16 @@
     "repository": "ekzhang/bore",
     "uriTemplate": "https://github.com/ekzhang/bore/releases/download/v%version%/bore-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "notation",
+    "paths": [
+      ["docker-generate.exe", "docker-generate.exe"],
+      ["docker-notation.exe", "docker-notation.exe"],
+      ["notation.exe", "notation.exe", "--version"]
+    ],
+    "repository": "notaryproject/notation",
+    "uriTemplate": "https://github.com/notaryproject/notation/releases/download/v%version%/notation_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
