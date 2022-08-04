@@ -870,5 +870,15 @@
     "repository": "plexsystems/sinker",
     "uriTemplate": "https://github.com/plexsystems/sinker/releases/download/v%version%/sinker-windows-amd64",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "netbird",
+    "paths": [
+      ["netbird-ui.exe", "netbird-ui.exe"],
+      ["netbird.exe", "netbird.exe", "version"]
+    ],
+    "repository": "netbirdio/netbird",
+    "uriTemplate": "https://github.com/netbirdio/netbird/releases/download/v%version%/netbird_%version%_windows_amd64_signed.tar.gz",
+    "versionPrefix": "v"
   }
 ]
