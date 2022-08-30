@@ -910,5 +910,12 @@
     "repository": "rapiz1/rathole",
     "uriTemplate": "https://github.com/rapiz1/rathole/releases/download/v%version%/rathole-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dnscrypt-proxy",
+    "paths": [["win64\\dnscrypt-proxy.exe", "dnscrypt-proxy.exe", "-version"]],
+    "repository": "DNSCrypt/dnscrypt-proxy",
+    "uriTemplate": "https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/%version%/dnscrypt-proxy-win64-%version%.zip",
+    "versionPrefix": ""
   }
 ]
