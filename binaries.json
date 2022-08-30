@@ -938,5 +938,15 @@
     "repository": "nextdns/nextdns",
     "uriTemplate": "https://github.com/nextdns/nextdns/releases/download/v%version%/nextdns_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "doggo",
+    "paths": [
+      ["doggo-api.bin.exe", "doggo-api.bin.exe"],
+      ["doggo.exe", "doggo.exe", "--version"]
+    ],
+    "repository": "mr-karan/doggo",
+    "uriTemplate": "https://github.com/mr-karan/doggo/releases/download/v%version%/doggo_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
