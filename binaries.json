@@ -917,5 +917,12 @@
     "repository": "DNSCrypt/dnscrypt-proxy",
     "uriTemplate": "https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/%version%/dnscrypt-proxy-win64-%version%.zip",
     "versionPrefix": ""
+  },
+  {
+    "binary": "dnscrypt",
+    "paths": [["windows-amd64\\dnscrypt.exe", "dnscrypt.exe", "version"]],
+    "repository": "ameshkov/dnscrypt",
+    "uriTemplate": "https://github.com/ameshkov/dnscrypt/releases/download/v%version%/dnscrypt-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
