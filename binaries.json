@@ -903,5 +903,12 @@
     "repository": "AdguardTeam/AdGuardHome",
     "uriTemplate": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v%version%/AdGuardHome_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "rathole",
+    "paths": [["rathole.exe", "rathole.exe", "--version"]],
+    "repository": "rapiz1/rathole",
+    "uriTemplate": "https://github.com/rapiz1/rathole/releases/download/v%version%/rathole-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
