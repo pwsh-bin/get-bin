@@ -962,5 +962,12 @@
     "repository": "errata-ai/vale",
     "uriTemplate": "https://github.com/errata-ai/vale/releases/download/v%version%/vale_%version%_Windows_64-bit.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "ghcup",
+    "paths": [["x86_64-mingw64-ghcup-%version%.exe", "ghcup.exe", "--version"]],
+    "repository": "haskell/ghcup-hs",
+    "uriTemplate": "https://github.com/haskell/ghcup-hs/releases/download/v%version%/x86_64-mingw64-ghcup-%version%.exe",
+    "versionPrefix": "v"
   }
 ]
