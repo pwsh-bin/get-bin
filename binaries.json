@@ -931,5 +931,12 @@
     "repository": "nextdns/diag",
     "uriTemplate": "https://github.com/nextdns/diag/releases/download/v%version%/diag_%version%_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "nextdns",
+    "paths": [["nextdns.exe", "nextdns.exe", "version"]],
+    "repository": "nextdns/nextdns",
+    "uriTemplate": "https://github.com/nextdns/nextdns/releases/download/v%version%/nextdns_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
