@@ -948,5 +948,12 @@
     "repository": "mr-karan/doggo",
     "uriTemplate": "https://github.com/mr-karan/doggo/releases/download/v%version%/doggo_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "wstunnel",
+    "paths": [["wstunnel.exe", "wstunnel.exe", "--version"]],
+    "repository": "erebe/wstunnel",
+    "uriTemplate": "https://github.com/erebe/wstunnel/releases/download/v%version%/wstunnel-windows-x64.exe.zip",
+    "versionPrefix": "v"
   }
 ]
