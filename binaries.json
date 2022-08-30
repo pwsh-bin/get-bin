@@ -880,5 +880,12 @@
     "repository": "netbirdio/netbird",
     "uriTemplate": "https://github.com/netbirdio/netbird/releases/download/v%version%/netbird_%version%_windows_amd64_signed.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "cyclonedx",
+    "paths": [["cyclonedx-win-x64.exe", "cyclonedx.exe", "--version"]],
+    "repository": "CycloneDX/cyclonedx-cli",
+    "uriTemplate": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v%version%/cyclonedx-win-x64.exe",
+    "versionPrefix": "v"
   }
 ]
