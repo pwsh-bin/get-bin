@@ -887,5 +887,14 @@
     "repository": "CycloneDX/cyclonedx-cli",
     "uriTemplate": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v%version%/cyclonedx-win-x64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "pdfcpu",
+    "paths": [
+      ["pdfcpu_%version%_Windows_x86_64\\pdfcpu.exe", "pdfcpu.exe", "version"]
+    ],
+    "repository": "pdfcpu/pdfcpu",
+    "uriTemplate": "https://github.com/pdfcpu/pdfcpu/releases/download/v%version%/pdfcpu_%version%_Windows_x86_64.zip",
+    "versionPrefix": "v"
   }
 ]
