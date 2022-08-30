@@ -924,5 +924,12 @@
     "repository": "ameshkov/dnscrypt",
     "uriTemplate": "https://github.com/ameshkov/dnscrypt/releases/download/v%version%/dnscrypt-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "diag",
+    "paths": [["diag_%version%_windows_amd64.exe", "diag.exe"]],
+    "repository": "nextdns/diag",
+    "uriTemplate": "https://github.com/nextdns/diag/releases/download/v%version%/diag_%version%_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
