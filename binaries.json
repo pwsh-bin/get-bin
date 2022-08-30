@@ -955,5 +955,12 @@
     "repository": "erebe/wstunnel",
     "uriTemplate": "https://github.com/erebe/wstunnel/releases/download/v%version%/wstunnel-windows-x64.exe.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "vale",
+    "paths": [["vale.exe", "vale.exe", "--version"]],
+    "repository": "errata-ai/vale",
+    "uriTemplate": "https://github.com/errata-ai/vale/releases/download/v%version%/vale_%version%_Windows_64-bit.zip",
+    "versionPrefix": "v"
   }
 ]
