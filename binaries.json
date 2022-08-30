@@ -896,5 +896,12 @@
     "repository": "pdfcpu/pdfcpu",
     "uriTemplate": "https://github.com/pdfcpu/pdfcpu/releases/download/v%version%/pdfcpu_%version%_Windows_x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "adguardhome",
+    "paths": [["AdGuardHome\\AdGuardHome.exe", "adguardhome.exe", "--version"]],
+    "repository": "AdguardTeam/AdGuardHome",
+    "uriTemplate": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v%version%/AdGuardHome_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
