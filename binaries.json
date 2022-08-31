@@ -969,5 +969,12 @@
     "repository": "haskell/ghcup-hs",
     "uriTemplate": "https://github.com/haskell/ghcup-hs/releases/download/v%version%/x86_64-mingw64-ghcup-%version%.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dnslookup",
+    "paths": [["windows-amd64\\dnslookup.exe", "dnslookup.exe", "--version"]],
+    "repository": "ameshkov/dnslookup",
+    "uriTemplate": "https://github.com/ameshkov/dnslookup/releases/download/v%version%/dnslookup-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
