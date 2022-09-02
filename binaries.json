@@ -997,5 +997,12 @@
     "repository": "yahoo/kubectl-flame",
     "uriTemplate": "https://github.com/yahoo/kubectl-flame/releases/download/v%version%/kubectl-flame_v%version%_windows_x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "zoxide",
+    "paths": [["zoxide.exe", "zoxide.exe", "--version"]],
+    "repository": "ajeetdsouza/zoxide",
+    "uriTemplate": "https://github.com/ajeetdsouza/zoxide/releases/download/v%version%/zoxide-%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": "v"
   }
 ]
