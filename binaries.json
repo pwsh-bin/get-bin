@@ -990,5 +990,12 @@
     "repository": "cloudflare/pint",
     "uriTemplate": "https://github.com/cloudflare/pint/releases/download/v%version%/pint-%version%-windows-x86_64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "kubectl-flame",
+    "paths": [["kubectl-flame.exe", "kubectl-flame.exe", "--version"]],
+    "repository": "yahoo/kubectl-flame",
+    "uriTemplate": "https://github.com/yahoo/kubectl-flame/releases/download/v%version%/kubectl-flame_v%version%_windows_x86_64.zip",
+    "versionPrefix": "v"
   }
 ]
