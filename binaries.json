@@ -1011,5 +1011,23 @@
     "repository": "junegunn/fzf",
     "uriTemplate": "https://github.com/junegunn/fzf/releases/download/%version%/fzf-%version%-windows_amd64.zip",
     "versionPrefix": ""
+  },
+  {
+    "binary": "rg:gnu",
+    "paths": [
+      ["ripgrep-13.0.0-x86_64-pc-windows-gnu\\rg.exe", "rg.exe", "--version"]
+    ],
+    "repository": "BurntSushi/ripgrep",
+    "uriTemplate": "https://github.com/BurntSushi/ripgrep/releases/download/%version%/ripgrep-%version%-x86_64-pc-windows-gnu.zip",
+    "versionPrefix": ""
+  },
+  {
+    "binary": "rg:msvc",
+    "paths": [
+      ["ripgrep-13.0.0-x86_64-pc-windows-msvc\\rg.exe", "rg.exe", "--version"]
+    ],
+    "repository": "BurntSushi/ripgrep",
+    "uriTemplate": "https://github.com/BurntSushi/ripgrep/releases/download/%version%/ripgrep-%version%-x86_64-pc-windows-msvc.zip",
+    "versionPrefix": ""
   }
 ]
