@@ -1004,5 +1004,12 @@
     "repository": "ajeetdsouza/zoxide",
     "uriTemplate": "https://github.com/ajeetdsouza/zoxide/releases/download/v%version%/zoxide-%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "fzf",
+    "paths": [["fzf.exe", "fzf.exe", "--version"]],
+    "repository": "junegunn/fzf",
+    "uriTemplate": "https://github.com/junegunn/fzf/releases/download/%version%/fzf-%version%-windows_amd64.zip",
+    "versionPrefix": ""
   }
 ]
