@@ -976,5 +976,12 @@
     "repository": "ameshkov/dnslookup",
     "uriTemplate": "https://github.com/ameshkov/dnslookup/releases/download/v%version%/dnslookup-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "caddy",
+    "paths": [["caddy.exe", "caddy.exe", "version"]],
+    "repository": "caddyserver/caddy",
+    "uriTemplate": "https://github.com/caddyserver/caddy/releases/download/v%version%/caddy_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
