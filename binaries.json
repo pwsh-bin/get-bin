@@ -983,5 +983,12 @@
     "repository": "caddyserver/caddy",
     "uriTemplate": "https://github.com/caddyserver/caddy/releases/download/v%version%/caddy_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "pint",
+    "paths": [["pint-windows-amd64.exe", "pint.exe", "version"]],
+    "repository": "cloudflare/pint",
+    "uriTemplate": "https://github.com/cloudflare/pint/releases/download/v%version%/pint-%version%-windows-x86_64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
