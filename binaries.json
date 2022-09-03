@@ -1029,5 +1029,12 @@
     "repository": "BurntSushi/ripgrep",
     "uriTemplate": "https://github.com/BurntSushi/ripgrep/releases/download/%version%/ripgrep-%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": ""
+  },
+  {
+    "binary": "git-xargs",
+    "paths": [["git-xargs_windows_amd64.exe", "git-xargs.exe", "--version"]],
+    "repository": "gruntwork-io/git-xargs",
+    "uriTemplate": "https://github.com/gruntwork-io/git-xargs/releases/download/v%version%/git-xargs_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
