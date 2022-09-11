@@ -1050,5 +1050,12 @@
     "repository": "micromdm/scep",
     "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepclient-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "scepserver",
+    "paths": [["scepserver-windows-amd64.exe", "scepserver.exe", "-version"]],
+    "repository": "micromdm/scep",
+    "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepserver-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
