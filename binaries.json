@@ -1128,5 +1128,12 @@
     "repository": "kubernetes/minikube",
     "uriTemplate": "https://github.com/kubernetes/minikube/releases/download/v%version%/minikube-windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "alfis",
+    "paths": [["alfis.exe", "alfis.exe", "--version"]],
+    "repository": "Revertron/Alfis",
+    "uriTemplate": "https://github.com/Revertron/Alfis/releases/download/v%version%/alfis-windows-amd64-v%version%-edge.zip",
+    "versionPrefix": "v"
   }
 ]
