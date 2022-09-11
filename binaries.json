@@ -1121,5 +1121,12 @@
     "repository": "librespeed/speedtest-cli",
     "uriTemplate": "https://github.com/librespeed/speedtest-cli/releases/download/v%version%/librespeed-cli_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "minikube",
+    "paths": [["minikube-windows-amd64.exe", "minikube.exe", "version"]],
+    "repository": "kubernetes/minikube",
+    "uriTemplate": "https://github.com/kubernetes/minikube/releases/download/v%version%/minikube-windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
