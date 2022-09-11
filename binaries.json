@@ -1082,5 +1082,12 @@
     "repository": "cunnie/sslip.io",
     "uriTemplate": "https://github.com/cunnie/sslip.io/releases/download/%version%/sslip.io-dns-server-windows-amd64.exe",
     "versionPrefix": ""
+  },
+  {
+    "binary": "ipfs",
+    "paths": [["kubo\\ipfs.exe", "ipfs.exe", "version"]],
+    "repository": "ipfs/kubo",
+    "uriTemplate": "https://github.com/ipfs/kubo/releases/download/v%version%/kubo_v%version%_windows-amd64.zip",
+    "versionPrefix": "v"
   }
 ]
