@@ -1057,5 +1057,12 @@
     "repository": "micromdm/scep",
     "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepserver-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "protoc",
+    "paths": [["bin\\protoc.exe", "protoc.exe", "--version"]],
+    "repository": "protocolbuffers/protobuf",
+    "uriTemplate": "https://github.com/protocolbuffers/protobuf/releases/download/v%version%/protoc-%version%-win64.zip",
+    "versionPrefix": "v"
   }
 ]
