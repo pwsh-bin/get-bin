@@ -1075,5 +1075,12 @@
     "repository": "capnproto/capnproto",
     "uriTemplate": "https://capnproto.org/capnproto-c++-win32-%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "sslip.io",
+    "paths": [["sslip.io-dns-server-windows-amd64.exe", "sslip.io.exe"]],
+    "repository": "cunnie/sslip.io",
+    "uriTemplate": "https://github.com/cunnie/sslip.io/releases/download/%version%/sslip.io-dns-server-windows-amd64.exe",
+    "versionPrefix": ""
   }
 ]
