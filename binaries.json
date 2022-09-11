@@ -1096,5 +1096,14 @@
     "repository": "nadoo/glider",
     "uriTemplate": "https://github.com/nadoo/glider/releases/download/v%version%/glider_%version%_windows_amd64v3.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "frpc",
+    "paths": [
+      ["frp_%version%_windows_amd64\\frpc.exe", "frpc.exe", "--version"]
+    ],
+    "repository": "fatedier/frp",
+    "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
