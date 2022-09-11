@@ -1135,5 +1135,12 @@
     "repository": "Revertron/Alfis",
     "uriTemplate": "https://github.com/Revertron/Alfis/releases/download/v%version%/alfis-windows-amd64-v%version%-edge.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "elvish",
+    "paths": [["elvish-v%version%.exe", "elvish.exe", "-version"]],
+    "repository": "elves/elvish",
+    "uriTemplate": "https://dl.elv.sh/windows-amd64/elvish-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
