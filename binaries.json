@@ -1105,5 +1105,14 @@
     "repository": "fatedier/frp",
     "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "frps",
+    "paths": [
+      ["frp_%version%_windows_amd64\\frps.exe", "frps.exe", "--version"]
+    ],
+    "repository": "fatedier/frp",
+    "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
