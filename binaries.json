@@ -1064,5 +1064,16 @@
     "repository": "protocolbuffers/protobuf",
     "uriTemplate": "https://github.com/protocolbuffers/protobuf/releases/download/v%version%/protoc-%version%-win64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "capnp",
+    "paths": [
+      ["capnproto-tools-win32-%version%\\capnpc-c++.exe", "capnpc-c++.exe"],
+      ["capnproto-tools-win32-%version%\\capnpc-capnp.exe", "capnpc-capnp.exe"],
+      ["capnproto-tools-win32-%version%\\capnp.exe", "capnp.exe", "--version"]
+    ],
+    "repository": "capnproto/capnproto",
+    "uriTemplate": "https://capnproto.org/capnproto-c++-win32-%version%.zip",
+    "versionPrefix": "v"
   }
 ]
