@@ -1114,5 +1114,12 @@
     "repository": "fatedier/frp",
     "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "librespeed-cli",
+    "paths": [["librespeed-cli.exe", "librespeed-cli.exe", "--version"]],
+    "repository": "librespeed/speedtest-cli",
+    "uriTemplate": "https://github.com/librespeed/speedtest-cli/releases/download/v%version%/librespeed-cli_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
