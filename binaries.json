@@ -1036,5 +1036,12 @@
     "repository": "gruntwork-io/git-xargs",
     "uriTemplate": "https://github.com/gruntwork-io/git-xargs/releases/download/v%version%/git-xargs_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "go-dispatch-proxy",
+    "paths": [["go-dispatch-proxy.exe", "go-dispatch-proxy.exe"]],
+    "repository": "extremecoders-re/go-dispatch-proxy",
+    "uriTemplate": "https://github.com/extremecoders-re/go-dispatch-proxy/releases/download/v%version%/go-dispatch-proxy.win.x64.7z",
+    "versionPrefix": "v"
   }
 ]
