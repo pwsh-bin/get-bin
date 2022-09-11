@@ -1043,5 +1043,12 @@
     "repository": "extremecoders-re/go-dispatch-proxy",
     "uriTemplate": "https://github.com/extremecoders-re/go-dispatch-proxy/releases/download/v%version%/go-dispatch-proxy.win.x64.7z",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "scepclient",
+    "paths": [["scepclient-windows-amd64.exe", "scepclient.exe", "-version"]],
+    "repository": "micromdm/scep",
+    "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepclient-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
