@@ -52,14 +52,14 @@
     "binary": "packer",
     "paths": [["packer.exe", "packer.exe", "version"]],
     "repository": "hashicorp/packer",
-    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/packer/%version%/packer_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.com/packer/%version%/packer_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "terraform",
     "paths": [["terraform.exe", "terraform.exe", "version"]],
     "repository": "hashicorp/terraform",
-    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/terraform/%version%/terraform_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.com/terraform/%version%/terraform_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
@@ -583,21 +583,21 @@
     "binary": "consul",
     "paths": [["consul.exe", "consul.exe", "version"]],
     "repository": "hashicorp/consul",
-    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/consul/%version%/consul_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.com/consul/%version%/consul_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "vault",
     "paths": [["vault.exe", "vault.exe", "version"]],
     "repository": "hashicorp/vault",
-    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/vault/%version%/vault_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.com/vault/%version%/vault_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "nomad",
     "paths": [["nomad.exe", "nomad.exe", "version"]],
     "repository": "hashicorp/nomad",
-    "uriTemplate": "https://releases.hashicorp.sergeysedoy97.ru/nomad/%version%/nomad_%version%_windows_amd64.zip",
+    "uriTemplate": "https://releases.hashicorp.com/nomad/%version%/nomad_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
