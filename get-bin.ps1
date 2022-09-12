@@ -8,7 +8,7 @@ ${GITHUB_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".github")
 ${STORE_PATH} = (Join-Path -Path ${PS1_HOME} -ChildPath ".store")
 ${7ZIP} = (Join-Path -Path ${ENV:PROGRAMFILES} -ChildPath (Join-Path -Path "7-Zip" -ChildPath "7z.exe"))
 ${PER_PAGE} = 100
-${VERSION} = "v0.6.1"
+${VERSION} = "v0.6.2"
 ${HELP} = @"
 Usage:
 get-bin self-install                  - update get-bin to latest version
@@ -232,13 +232,25 @@ function Install {
     if (${DEBUG}) {
       Write-Host "[DEBUG] GET ${uri}"
     }
+    ${is_blocked} = $false
     try {
-      Invoke-RestMethod -Method "Get" -Uri ${uri} -OutFile ${outfile}
+      Invoke-WebRequest -Method "Get" -Uri ${uri} -OutFile ${outfile} -TimeoutSec 15
     }
     catch {
       Write-Host "[ERROR] GET ${uri}:"
       Write-Host $_
-      exit
+      ${is_blocked} = $true
+    }
+    if (${is_blocked} -eq $true) {
+      try {
+        Invoke-WebRequest -Method "Get" -Uri ${uri} -OutFile ${outfile} -TimeoutSec 15 -Proxy "http://proxy-nossl.antizapret.prostovpn.org:29976"
+      }
+      catch {
+        Write-Host "[ERROR] GET ${uri}:"
+        Write-Host $_
+        Remove-Item -Force -Path ${directory}
+        exit
+      }
     }
     ${is_archive} = $false
     if (${filename}.EndsWith(".zip")) {
