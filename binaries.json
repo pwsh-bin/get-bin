@@ -1142,5 +1142,12 @@
     "repository": "elves/elvish",
     "uriTemplate": "https://dl.elv.sh/windows-amd64/elvish-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "configcat",
+    "paths": [["win-x64\\configcat.exe", "configcat.exe", "--version"]],
+    "repository": "configcat/cli",
+    "uriTemplate": "https://github.com/configcat/cli/releases/download/v%version%/configcat-cli_%version%_win-x64.zip",
+    "versionPrefix": "v"
   }
 ]
