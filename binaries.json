@@ -1156,5 +1156,12 @@
     "repository": "Snawoot/dumbproxy",
     "uriTemplate": "https://github.com/Snawoot/dumbproxy/releases/download/v%version%/dumbproxy.windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dnsproxy",
+    "paths": [["windows-amd64\\dnsproxy.exe", "dnsproxy.exe", "--version"]],
+    "repository": "AdguardTeam/dnsproxy",
+    "uriTemplate": "https://github.com/AdguardTeam/dnsproxy/releases/download/v%version%/dnsproxy-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
