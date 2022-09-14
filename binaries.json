@@ -1149,5 +1149,12 @@
     "repository": "configcat/cli",
     "uriTemplate": "https://github.com/configcat/cli/releases/download/v%version%/configcat-cli_%version%_win-x64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dumbproxy",
+    "paths": [["dumbproxy.windows-amd64.exe", "dumbproxy.exe", "-version"]],
+    "repository": "Snawoot/dumbproxy",
+    "uriTemplate": "https://github.com/Snawoot/dumbproxy/releases/download/v%version%/dumbproxy.windows-amd64.exe",
+    "versionPrefix": "v"
   }
 ]
