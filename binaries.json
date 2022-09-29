@@ -1,77 +1,143 @@
 [
   {
     "binary": "cilium",
-    "paths": [["cilium.exe", "cilium.exe", "version"]],
+    "paths": [
+      [
+        "cilium.exe",
+        "cilium.exe",
+        "version"
+      ]
+    ],
     "repository": "cilium/cilium-cli",
     "uriTemplate": "https://github.com/cilium/cilium-cli/releases/download/v%version%/cilium-windows-amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "cmctl",
-    "paths": [["cmctl.exe", "cmctl.exe", "version --short --client"]],
+    "paths": [
+      [
+        "cmctl.exe",
+        "cmctl.exe",
+        "version --short --client"
+      ]
+    ],
     "repository": "jetstack/cert-manager",
     "uriTemplate": "https://github.com/jetstack/cert-manager/releases/download/v%version%/cmctl-windows-amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "devspace",
-    "paths": [["devspace-windows-amd64.exe", "devspace.exe", "--version"]],
+    "paths": [
+      [
+        "devspace-windows-amd64.exe",
+        "devspace.exe",
+        "--version"
+      ]
+    ],
     "repository": "loft-sh/devspace",
     "uriTemplate": "https://github.com/loft-sh/devspace/releases/download/v%version%/devspace-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "gh",
-    "paths": [["bin\\gh.exe", "gh.exe", "--version"]],
+    "paths": [
+      [
+        "bin\\gh.exe",
+        "gh.exe",
+        "--version"
+      ]
+    ],
     "repository": "cli/cli",
     "uriTemplate": "https://github.com/cli/cli/releases/download/v%version%/gh_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "helm",
-    "paths": [["windows-amd64\\helm.exe", "helm.exe", "version --short"]],
+    "paths": [
+      [
+        "windows-amd64\\helm.exe",
+        "helm.exe",
+        "version --short"
+      ]
+    ],
     "repository": "helm/helm",
     "uriTemplate": "https://get.helm.sh/helm-v%version%-windows-amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "kubectl",
-    "paths": [["kubectl.exe", "kubectl.exe", "version --short --client"]],
+    "paths": [
+      [
+        "kubectl.exe",
+        "kubectl.exe",
+        "version --short --client"
+      ]
+    ],
     "repository": "kubernetes/kubectl",
     "uriTemplate": "https://storage.googleapis.com/kubernetes-release/release/v%version%/bin/windows/amd64/kubectl.exe",
     "versionPrefix": "kubernetes-"
   },
   {
     "binary": "okteto",
-    "paths": [["okteto.exe", "okteto.exe", "version"]],
+    "paths": [
+      [
+        "okteto.exe",
+        "okteto.exe",
+        "version"
+      ]
+    ],
     "repository": "okteto/okteto",
     "uriTemplate": "https://github.com/okteto/okteto/releases/download/%version%/okteto.exe",
     "versionPrefix": ""
   },
   {
     "binary": "packer",
-    "paths": [["packer.exe", "packer.exe", "version"]],
+    "paths": [
+      [
+        "packer.exe",
+        "packer.exe",
+        "version"
+      ]
+    ],
     "repository": "hashicorp/packer",
     "uriTemplate": "https://releases.hashicorp.com/packer/%version%/packer_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "terraform",
-    "paths": [["terraform.exe", "terraform.exe", "version"]],
+    "paths": [
+      [
+        "terraform.exe",
+        "terraform.exe",
+        "version"
+      ]
+    ],
     "repository": "hashicorp/terraform",
     "uriTemplate": "https://releases.hashicorp.com/terraform/%version%/terraform_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "pulumi",
-    "paths": [["pulumi\\bin\\pulumi.exe", "pulumi.exe", "version"]],
+    "paths": [
+      [
+        "pulumi\\bin\\pulumi.exe",
+        "pulumi.exe",
+        "version"
+      ]
+    ],
     "repository": "pulumi/pulumi",
     "uriTemplate": "https://get.pulumi.com/releases/sdk/pulumi-v%version%-windows-x64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "step",
-    "paths": [["step_%version%\\bin\\step.exe", "step.exe", "version"]],
+    "paths": [
+      [
+        "step_%version%\\bin\\step.exe",
+        "step.exe",
+        "version"
+      ]
+    ],
     "repository": "smallstep/cli",
     "uriTemplate": "https://github.com/smallstep/cli/releases/download/v%version%/step_windows_%version%_amd64.zip",
     "versionPrefix": "v"
@@ -91,7 +157,13 @@
   },
   {
     "binary": "kubeval",
-    "paths": [["kubeval.exe", "kubeval.exe", "--version"]],
+    "paths": [
+      [
+        "kubeval.exe",
+        "kubeval.exe",
+        "--version"
+      ]
+    ],
     "repository": "instrumenta/kubeval",
     "uriTemplate": "https://github.com/instrumenta/kubeval/releases/download/v%version%/kubeval-windows-amd64.zip",
     "versionPrefix": "v"
@@ -99,7 +171,11 @@
   {
     "binary": "kube-score",
     "paths": [
-      ["kube-score_%version%_windows_amd64.exe", "kube-score.exe", "version"]
+      [
+        "kube-score_%version%_windows_amd64.exe",
+        "kube-score.exe",
+        "version"
+      ]
     ],
     "repository": "zegl/kube-score",
     "uriTemplate": "https://github.com/zegl/kube-score/releases/download/v%version%/kube-score_%version%_windows_amd64.exe",
@@ -107,63 +183,117 @@
   },
   {
     "binary": "eksctl",
-    "paths": [["eksctl.exe", "eksctl.exe", "version"]],
+    "paths": [
+      [
+        "eksctl.exe",
+        "eksctl.exe",
+        "version"
+      ]
+    ],
     "repository": "weaveworks/eksctl",
     "uriTemplate": "https://github.com/weaveworks/eksctl/releases/download/v%version%/eksctl_Windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "helmfile",
-    "paths": [["helmfile_windows_amd64.exe", "helmfile.exe", "version"]],
+    "paths": [
+      [
+        "helmfile_windows_amd64.exe",
+        "helmfile.exe",
+        "version"
+      ]
+    ],
     "repository": "roboll/helmfile",
     "uriTemplate": "https://github.com/roboll/helmfile/releases/download/v%version%/helmfile_windows_amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "helmsman",
-    "paths": [["helmsman.exe", "helmsman.exe", "-v"]],
+    "paths": [
+      [
+        "helmsman.exe",
+        "helmsman.exe",
+        "-v"
+      ]
+    ],
     "repository": "Praqma/helmsman",
     "uriTemplate": "https://github.com/Praqma/helmsman/releases/download/v%version%/helmsman_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "ecs",
-    "paths": [["ecs-cli-windows-amd64-v%version%.exe", "ecs.exe", "--version"]],
+    "paths": [
+      [
+        "ecs-cli-windows-amd64-v%version%.exe",
+        "ecs.exe",
+        "--version"
+      ]
+    ],
     "repository": "aws/amazon-ecs-cli",
     "uriTemplate": "https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-windows-amd64-v%version%.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "copilot",
-    "paths": [["copilot-windows-v%version%.exe", "copilot.exe", "--version"]],
+    "paths": [
+      [
+        "copilot-windows-v%version%.exe",
+        "copilot.exe",
+        "--version"
+      ]
+    ],
     "repository": "aws/copilot-cli",
     "uriTemplate": "https://github.com/aws/copilot-cli/releases/download/v%version%/copilot-windows-v%version%.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "vector",
-    "paths": [["bin\\vector.exe", "vector.exe", "--version"]],
+    "paths": [
+      [
+        "bin\\vector.exe",
+        "vector.exe",
+        "--version"
+      ]
+    ],
     "repository": "vectordotdev/vector",
     "uriTemplate": "https://github.com/vectordotdev/vector/releases/download/v%version%/vector-%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "paket",
-    "paths": [["paket.exe", "paket.exe", "--version"]],
+    "paths": [
+      [
+        "paket.exe",
+        "paket.exe",
+        "--version"
+      ]
+    ],
     "repository": "fsprojects/Paket",
     "uriTemplate": "https://github.com/fsprojects/Paket/releases/download/%version%/paket.exe",
     "versionPrefix": ""
   },
   {
     "binary": "dive",
-    "paths": [["dive.exe", "dive.exe", "version"]],
+    "paths": [
+      [
+        "dive.exe",
+        "dive.exe",
+        "version"
+      ]
+    ],
     "repository": "wagoodman/dive",
     "uriTemplate": "https://github.com/wagoodman/dive/releases/download/v%version%/dive_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "tkn",
-    "paths": [["tkn.exe", "tkn.exe", "version"]],
+    "paths": [
+      [
+        "tkn.exe",
+        "tkn.exe",
+        "version"
+      ]
+    ],
     "repository": "tektoncd/cli",
     "uriTemplate": "https://github.com/tektoncd/cli/releases/download/v%version%/tkn_%version%_Windows_x86_64.zip",
     "versionPrefix": "v"
@@ -171,7 +301,11 @@
   {
     "binary": "argocd",
     "paths": [
-      ["argocd-windows-amd64.exe", "argocd.exe", "version --short --client"]
+      [
+        "argocd-windows-amd64.exe",
+        "argocd.exe",
+        "version --short --client"
+      ]
     ],
     "repository": "argoproj/argo-cd",
     "uriTemplate": "https://github.com/argoproj/argo-cd/releases/download/v%version%/argocd-windows-amd64.exe",
@@ -179,42 +313,78 @@
   },
   {
     "binary": "tsh",
-    "paths": [["teleport\\tsh.exe", "tsh.exe", "version"]],
+    "paths": [
+      [
+        "teleport\\tsh.exe",
+        "tsh.exe",
+        "version"
+      ]
+    ],
     "repository": "gravitational/teleport",
     "uriTemplate": "https://get.gravitational.com/teleport-v%version%-windows-amd64-bin.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "bazel",
-    "paths": [["bazel-%version%-windows-x86_64.exe", "bazel.exe", "version"]],
+    "paths": [
+      [
+        "bazel-%version%-windows-x86_64.exe",
+        "bazel.exe",
+        "version"
+      ]
+    ],
     "repository": "bazelbuild/bazel",
     "uriTemplate": "https://github.com/bazelbuild/bazel/releases/download/%version%/bazel-%version%-windows-x86_64.exe",
     "versionPrefix": ""
   },
   {
     "binary": "kube-burner",
-    "paths": [["kube-burner.exe", "kube-burner.exe", "version"]],
+    "paths": [
+      [
+        "kube-burner.exe",
+        "kube-burner.exe",
+        "version"
+      ]
+    ],
     "repository": "cloud-bulldozer/kube-burner",
     "uriTemplate": "https://github.com/cloud-bulldozer/kube-burner/releases/download/v%version%/kube-burner-%version%-Windows-x86_64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "mizu",
-    "paths": [["mizu.exe", "mizu.exe", "version"]],
+    "paths": [
+      [
+        "mizu.exe",
+        "mizu.exe",
+        "version"
+      ]
+    ],
     "repository": "up9inc/mizu",
     "uriTemplate": "https://github.com/up9inc/mizu/releases/download/%version%/mizu.exe",
     "versionPrefix": ""
   },
   {
     "binary": "nerdctl",
-    "paths": [["nerdctl.exe", "nerdctl.exe", "--version"]],
+    "paths": [
+      [
+        "nerdctl.exe",
+        "nerdctl.exe",
+        "--version"
+      ]
+    ],
     "repository": "containerd/nerdctl",
     "uriTemplate": "https://github.com/containerd/nerdctl/releases/download/v%version%/nerdctl-%version%-windows-amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "gsudo",
-    "paths": [["gsudo.exe", "gsudo.exe", "--version"]],
+    "paths": [
+      [
+        "gsudo.exe",
+        "gsudo.exe",
+        "--version"
+      ]
+    ],
     "repository": "gerardog/gsudo",
     "uriTemplate": "https://github.com/gerardog/gsudo/releases/download/v%version%/gsudo.v%version%.zip",
     "versionPrefix": "v"
@@ -222,8 +392,16 @@
   {
     "binary": "jsonnet",
     "paths": [
-      ["jsonnet.exe", "jsonnet.exe", "--version"],
-      ["jsonnetfmt.exe", "jsonnetfmt.exe", "--version"]
+      [
+        "jsonnet.exe",
+        "jsonnet.exe",
+        "--version"
+      ],
+      [
+        "jsonnetfmt.exe",
+        "jsonnetfmt.exe",
+        "--version"
+      ]
     ],
     "repository": "google/go-jsonnet",
     "uriTemplate": "https://github.com/google/go-jsonnet/releases/download/v%version%/go-jsonnet_%version%_Windows_x86_64.tar.gz",
@@ -231,35 +409,65 @@
   },
   {
     "binary": "minio",
-    "paths": [["minio.RELEASE.%version%", "minio.exe", "--version"]],
+    "paths": [
+      [
+        "minio.RELEASE.%version%",
+        "minio.exe",
+        "--version"
+      ]
+    ],
     "repository": "minio/minio",
     "uriTemplate": "https://dl.minio.io/server/minio/release/windows-amd64/archive/minio.RELEASE.%version%",
     "versionPrefix": "RELEASE."
   },
   {
     "binary": "mc",
-    "paths": [["mc.RELEASE.%version%", "mc.exe", "--version"]],
+    "paths": [
+      [
+        "mc.RELEASE.%version%",
+        "mc.exe",
+        "--version"
+      ]
+    ],
     "repository": "minio/mc",
     "uriTemplate": "https://dl.minio.io/client/mc/release/windows-amd64/archive/mc.RELEASE.%version%",
     "versionPrefix": "RELEASE."
   },
   {
     "binary": "kes",
-    "paths": [["kes-windows-amd64.exe", "kes.exe", "--version"]],
+    "paths": [
+      [
+        "kes-windows-amd64.exe",
+        "kes.exe",
+        "--version"
+      ]
+    ],
     "repository": "minio/kes",
     "uriTemplate": "https://github.com/minio/kes/releases/download/v%version%/kes-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "loft",
-    "paths": [["loft-windows-amd64.exe", "loft.exe", "--version"]],
+    "paths": [
+      [
+        "loft-windows-amd64.exe",
+        "loft.exe",
+        "--version"
+      ]
+    ],
     "repository": "loft-sh/loft",
     "uriTemplate": "https://github.com/loft-sh/loft/releases/download/v%version%/loft-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "helmwave",
-    "paths": [["helmwave.exe", "helmwave.exe", "--version"]],
+    "paths": [
+      [
+        "helmwave.exe",
+        "helmwave.exe",
+        "--version"
+      ]
+    ],
     "repository": "helmwave/helmwave",
     "uriTemplate": "https://github.com/helmwave/helmwave/releases/download/v%version%/helmwave_%version%_windows_amd64.zip",
     "versionPrefix": "v"
@@ -267,7 +475,11 @@
   {
     "binary": "kuberlr",
     "paths": [
-      ["kuberlr_%version%_windows_amd64\\kuberlr.exe", "kuberlr.exe", "version"]
+      [
+        "kuberlr_%version%_windows_amd64\\kuberlr.exe",
+        "kuberlr.exe",
+        "version"
+      ]
     ],
     "repository": "flavio/kuberlr",
     "uriTemplate": "https://github.com/flavio/kuberlr/releases/download/v%version%/kuberlr_%version%_windows_amd64.zip",
@@ -275,14 +487,26 @@
   },
   {
     "binary": "crictl",
-    "paths": [["crictl.exe", "crictl.exe", "--version"]],
+    "paths": [
+      [
+        "crictl.exe",
+        "crictl.exe",
+        "--version"
+      ]
+    ],
     "repository": "kubernetes-sigs/cri-tools",
     "uriTemplate": "https://github.com/kubernetes-sigs/cri-tools/releases/download/v%version%/crictl-v%version%-windows-amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "buildctl",
-    "paths": [["bin\\buildctl.exe", "buildctl.exe", "--version"]],
+    "paths": [
+      [
+        "bin\\buildctl.exe",
+        "buildctl.exe",
+        "--version"
+      ]
+    ],
     "repository": "moby/buildkit",
     "uriTemplate": "https://github.com/moby/buildkit/releases/download/v%version%/buildkit-v%version%.windows-amd64.tar.gz",
     "versionPrefix": "v"
@@ -290,7 +514,11 @@
   {
     "binary": "cloudflared",
     "paths": [
-      ["cloudflared-windows-amd64.exe", "cloudflared.exe", "--version"]
+      [
+        "cloudflared-windows-amd64.exe",
+        "cloudflared.exe",
+        "--version"
+      ]
     ],
     "repository": "cloudflare/cloudflared",
     "uriTemplate": "https://github.com/cloudflare/cloudflared/releases/download/%version%/cloudflared-windows-amd64.exe",
@@ -298,7 +526,13 @@
   },
   {
     "binary": "podman",
-    "paths": [["podman-%version%\\podman.exe", "podman.exe", "--version"]],
+    "paths": [
+      [
+        "podman-%version%\\podman.exe",
+        "podman.exe",
+        "--version"
+      ]
+    ],
     "repository": "containers/podman",
     "uriTemplate": "https://github.com/containers/podman/releases/download/v%version%/podman-remote-release-windows.zip",
     "versionPrefix": "v"
@@ -306,9 +540,19 @@
   {
     "binary": "containerd",
     "paths": [
-      ["bin\\ctr.exe", "ctr.exe"],
-      ["bin\\containerd-shim-runhcs-v1.exe", "containerd-shim-runhcs-v1.exe"],
-      ["bin\\containerd.exe", "containerd.exe", "--version"]
+      [
+        "bin\\ctr.exe",
+        "ctr.exe"
+      ],
+      [
+        "bin\\containerd-shim-runhcs-v1.exe",
+        "containerd-shim-runhcs-v1.exe"
+      ],
+      [
+        "bin\\containerd.exe",
+        "containerd.exe",
+        "--version"
+      ]
     ],
     "repository": "containerd/containerd",
     "uriTemplate": "https://github.com/containerd/containerd/releases/download/v%version%/containerd-%version%-windows-amd64.tar.gz",
@@ -317,7 +561,11 @@
   {
     "binary": "telegraf",
     "paths": [
-      ["telegraf-%version%\\telegraf.exe", "telegraf.exe", "--version"]
+      [
+        "telegraf-%version%\\telegraf.exe",
+        "telegraf.exe",
+        "--version"
+      ]
     ],
     "repository": "influxdata/telegraf",
     "uriTemplate": "https://dl.influxdata.com/telegraf/releases/telegraf-%version%_windows_amd64.zip",
@@ -325,35 +573,65 @@
   },
   {
     "binary": "snyk",
-    "paths": [["snyk-win.exe", "snyk.exe", "version"]],
+    "paths": [
+      [
+        "snyk-win.exe",
+        "snyk.exe",
+        "version"
+      ]
+    ],
     "repository": "snyk/cli",
     "uriTemplate": "https://github.com/snyk/cli/releases/download/v%version%/snyk-win.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "grype",
-    "paths": [["grype.exe", "grype.exe", "version"]],
+    "paths": [
+      [
+        "grype.exe",
+        "grype.exe",
+        "version"
+      ]
+    ],
     "repository": "anchore/grype",
     "uriTemplate": "https://github.com/anchore/grype/releases/download/v%version%/grype_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "vswhere",
-    "paths": [["vswhere.exe", "vswhere.exe", "-?"]],
+    "paths": [
+      [
+        "vswhere.exe",
+        "vswhere.exe",
+        "-?"
+      ]
+    ],
     "repository": "microsoft/vswhere",
     "uriTemplate": "https://github.com/microsoft/vswhere/releases/download/%version%/vswhere.exe",
     "versionPrefix": ""
   },
   {
     "binary": "vcluster",
-    "paths": [["vcluster-windows-amd64.exe", "vcluster.exe", "--version"]],
+    "paths": [
+      [
+        "vcluster-windows-amd64.exe",
+        "vcluster.exe",
+        "--version"
+      ]
+    ],
     "repository": "loft-sh/vcluster",
     "uriTemplate": "https://github.com/loft-sh/vcluster/releases/download/v%version%/vcluster-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "starship",
-    "paths": [["starship.exe", "starship.exe", "--version"]],
+    "paths": [
+      [
+        "starship.exe",
+        "starship.exe",
+        "--version"
+      ]
+    ],
     "repository": "starship/starship",
     "uriTemplate": "https://github.com/starship/starship/releases/download/v%version%/starship-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
@@ -361,7 +639,11 @@
   {
     "binary": "gitlab-runner",
     "paths": [
-      ["gitlab-runner-windows-amd64.exe", "gitlab-runner.exe", "--version"]
+      [
+        "gitlab-runner-windows-amd64.exe",
+        "gitlab-runner.exe",
+        "--version"
+      ]
     ],
     "repository": "gitlabhq/gitlab-runner",
     "uriTemplate": "https://s3.amazonaws.com/gitlab-runner-downloads/v%version%/binaries/gitlab-runner-windows-amd64.exe",
@@ -370,12 +652,19 @@
   {
     "binary": "step-ca",
     "paths": [
-      ["step-ca_%version%\\bin\\step-awskms-init.exe", "step-awskms-init.exe"],
+      [
+        "step-ca_%version%\\bin\\step-awskms-init.exe",
+        "step-awskms-init.exe"
+      ],
       [
         "step-ca_%version%\\bin\\step-cloudkms-init.exe",
         "step-cloudkms-init.exe"
       ],
-      ["step-ca_%version%\\bin\\step-ca.exe", "step-ca.exe", "version"]
+      [
+        "step-ca_%version%\\bin\\step-ca.exe",
+        "step-ca.exe",
+        "version"
+      ]
     ],
     "repository": "smallstep/certificates",
     "uriTemplate": "https://github.com/smallstep/certificates/releases/download/v%version%/step-ca_windows_%version%_amd64.zip",
@@ -383,70 +672,129 @@
   },
   {
     "binary": "boringproxy",
-    "paths": [["boringproxy-windows-x86_64.exe", "boringproxy.exe", "version"]],
+    "paths": [
+      [
+        "boringproxy-windows-x86_64.exe",
+        "boringproxy.exe",
+        "version"
+      ]
+    ],
     "repository": "boringproxy/boringproxy",
     "uriTemplate": "https://github.com/boringproxy/boringproxy/releases/download/v%version%/boringproxy-windows-x86_64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "gauge",
-    "paths": [["gauge.exe", "gauge.exe", "version"]],
+    "paths": [
+      [
+        "gauge.exe",
+        "gauge.exe",
+        "version"
+      ]
+    ],
     "repository": "getgauge/gauge",
     "uriTemplate": "https://github.com/getgauge/gauge/releases/download/v%version%/gauge-%version%-windows.x86_64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "upm",
-    "paths": [["upm.exe", "upm.exe", "--version"]],
+    "paths": [
+      [
+        "upm.exe",
+        "upm.exe",
+        "--version"
+      ]
+    ],
     "repository": "replit/upm",
     "uriTemplate": "https://github.com/replit/upm/releases/download/v%version%/upm_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "beehive",
-    "paths": [["beehive.exe", "beehive.exe", "-version"]],
+    "paths": [
+      [
+        "beehive.exe",
+        "beehive.exe",
+        "-version"
+      ]
+    ],
     "repository": "muesli/beehive",
     "uriTemplate": "https://github.com/muesli/beehive/releases/download/v%version%/beehive_%version%_Windows_x86_64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "gotify-cli",
-    "paths": [["gotify-cli-windows-amd64.exe", "gotify-cli.exe", "version"]],
+    "paths": [
+      [
+        "gotify-cli-windows-amd64.exe",
+        "gotify-cli.exe",
+        "version"
+      ]
+    ],
     "repository": "gotify/cli",
     "uriTemplate": "https://github.com/gotify/cli/releases/download/v%version%/gotify-cli-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "gotify",
-    "paths": [["gotify-windows-amd64.exe", "gotify.exe"]],
+    "paths": [
+      [
+        "gotify-windows-amd64.exe",
+        "gotify.exe"
+      ]
+    ],
     "repository": "gotify/server",
     "uriTemplate": "https://github.com/gotify/server/releases/download/v%version%/gotify-windows-amd64.exe.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "up",
-    "paths": [["up.exe", "up.exe", "version"]],
+    "paths": [
+      [
+        "up.exe",
+        "up.exe",
+        "version"
+      ]
+    ],
     "repository": "apex/up",
     "uriTemplate": "https://github.com/apex/up/releases/download/v%version%/up_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "tunnel",
-    "paths": [["tunnel.exe", "tunnel.exe", "version"]],
+    "paths": [
+      [
+        "tunnel.exe",
+        "tunnel.exe",
+        "version"
+      ]
+    ],
     "repository": "labstack/tunnel-client",
     "uriTemplate": "https://github.com/labstack/tunnel-client/releases/download/v%version%/tunnel_%version%_windows_64-bit.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "ninja",
-    "paths": [["ninja.exe", "ninja.exe", "--version"]],
+    "paths": [
+      [
+        "ninja.exe",
+        "ninja.exe",
+        "--version"
+      ]
+    ],
     "repository": "ninja-build/ninja",
     "uriTemplate": "https://github.com/ninja-build/ninja/releases/download/v%version%/ninja-win.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "pack",
-    "paths": [["pack.exe", "pack.exe", "version"]],
+    "paths": [
+      [
+        "pack.exe",
+        "pack.exe",
+        "version"
+      ]
+    ],
     "repository": "buildpacks/pack",
     "uriTemplate": "https://github.com/buildpacks/pack/releases/download/v%version%/pack-v%version%-windows.zip",
     "versionPrefix": "v"
@@ -454,8 +802,15 @@
   {
     "binary": "tfsec",
     "paths": [
-      ["tfsec-checkgen.exe", "tfsec-checkgen.exe"],
-      ["tfsec.exe", "tfsec.exe", "--version"]
+      [
+        "tfsec-checkgen.exe",
+        "tfsec-checkgen.exe"
+      ],
+      [
+        "tfsec.exe",
+        "tfsec.exe",
+        "--version"
+      ]
     ],
     "repository": "aquasecurity/tfsec",
     "uriTemplate": "https://github.com/aquasecurity/tfsec/releases/download/v%version%/tfsec_%version%_windows_amd64.tar.gz",
@@ -463,35 +818,65 @@
   },
   {
     "binary": "bom",
-    "paths": [["bom-windows-amd64.exe", "bom.exe", "version"]],
+    "paths": [
+      [
+        "bom-windows-amd64.exe",
+        "bom.exe",
+        "version"
+      ]
+    ],
     "repository": "kubernetes-sigs/bom",
     "uriTemplate": "https://github.com/kubernetes-sigs/bom/releases/download/v%version%/bom-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "dockle",
-    "paths": [["dockle.exe", "dockle.exe", "--version"]],
+    "paths": [
+      [
+        "dockle.exe",
+        "dockle.exe",
+        "--version"
+      ]
+    ],
     "repository": "goodwithtech/dockle",
     "uriTemplate": "https://github.com/goodwithtech/dockle/releases/download/v%version%/dockle_%version%_Windows-64bit.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "syft",
-    "paths": [["syft.exe", "syft.exe", "version"]],
+    "paths": [
+      [
+        "syft.exe",
+        "syft.exe",
+        "version"
+      ]
+    ],
     "repository": "anchore/syft",
     "uriTemplate": "https://github.com/anchore/syft/releases/download/v%version%/syft_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "aqt",
-    "paths": [["aqt_x64.exe", "aqt.exe", "version"]],
+    "paths": [
+      [
+        "aqt_x64.exe",
+        "aqt.exe",
+        "version"
+      ]
+    ],
     "repository": "miurahr/aqtinstall",
     "uriTemplate": "https://github.com/miurahr/aqtinstall/releases/download/v%version%/aqt_x64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "cyclonedx-gomod",
-    "paths": [["cyclonedx-gomod.exe", "cyclonedx-gomod.exe", "version"]],
+    "paths": [
+      [
+        "cyclonedx-gomod.exe",
+        "cyclonedx-gomod.exe",
+        "version"
+      ]
+    ],
     "repository": "CycloneDX/cyclonedx-gomod",
     "uriTemplate": "https://github.com/CycloneDX/cyclonedx-gomod/releases/download/v%version%/cyclonedx-gomod_%version%_windows_amd64.zip",
     "versionPrefix": "v"
@@ -511,7 +896,13 @@
   },
   {
     "binary": "vcpkg",
-    "paths": [["vcpkg.exe", "vcpkg.exe", "version"]],
+    "paths": [
+      [
+        "vcpkg.exe",
+        "vcpkg.exe",
+        "version"
+      ]
+    ],
     "repository": "microsoft/vcpkg-tool",
     "uriTemplate": "https://github.com/microsoft/vcpkg-tool/releases/download/%version%/vcpkg.exe",
     "versionPrefix": ""
@@ -519,7 +910,11 @@
   {
     "binary": "choosenim",
     "paths": [
-      ["choosenim-%version%_windows_amd64.exe", "choosenim.exe", "--version"]
+      [
+        "choosenim-%version%_windows_amd64.exe",
+        "choosenim.exe",
+        "--version"
+      ]
     ],
     "repository": "dom96/choosenim",
     "uriTemplate": "https://github.com/dom96/choosenim/releases/download/v%version%/choosenim-%version%_windows_amd64.exe",
@@ -527,21 +922,39 @@
   },
   {
     "binary": "rustup:msvc",
-    "paths": [["rustup-init.exe", "rustup-init.exe", "--version"]],
+    "paths": [
+      [
+        "rustup-init.exe",
+        "rustup-init.exe",
+        "--version"
+      ]
+    ],
     "repository": "rust-lang/rustup",
     "uriTemplate": "https://static.rust-lang.org/rustup/archive/%version%/x86_64-pc-windows-msvc/rustup-init.exe",
     "versionPrefix": ""
   },
   {
     "binary": "rustup:gnu",
-    "paths": [["rustup-init.exe", "rustup-init.exe", "--version"]],
+    "paths": [
+      [
+        "rustup-init.exe",
+        "rustup-init.exe",
+        "--version"
+      ]
+    ],
     "repository": "rust-lang/rustup",
     "uriTemplate": "https://static.rust-lang.org/rustup/archive/%version%/x86_64-pc-windows-gnu/rustup-init.exe",
     "versionPrefix": ""
   },
   {
     "binary": "fnm",
-    "paths": [["fnm.exe", "fnm.exe", "--version"]],
+    "paths": [
+      [
+        "fnm.exe",
+        "fnm.exe",
+        "--version"
+      ]
+    ],
     "repository": "Schniz/fnm",
     "uriTemplate": "https://github.com/Schniz/fnm/releases/download/v%version%/fnm-windows.zip",
     "versionPrefix": "v"
@@ -574,77 +987,143 @@
   },
   {
     "binary": "bazelisk",
-    "paths": [["bazelisk-windows-amd64.exe", "bazelisk.exe", "version"]],
+    "paths": [
+      [
+        "bazelisk-windows-amd64.exe",
+        "bazelisk.exe",
+        "version"
+      ]
+    ],
     "repository": "bazelbuild/bazelisk",
     "uriTemplate": "https://github.com/bazelbuild/bazelisk/releases/download/v%version%/bazelisk-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "consul",
-    "paths": [["consul.exe", "consul.exe", "version"]],
+    "paths": [
+      [
+        "consul.exe",
+        "consul.exe",
+        "version"
+      ]
+    ],
     "repository": "hashicorp/consul",
     "uriTemplate": "https://releases.hashicorp.com/consul/%version%/consul_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "vault",
-    "paths": [["vault.exe", "vault.exe", "version"]],
+    "paths": [
+      [
+        "vault.exe",
+        "vault.exe",
+        "version"
+      ]
+    ],
     "repository": "hashicorp/vault",
     "uriTemplate": "https://releases.hashicorp.com/vault/%version%/vault_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "nomad",
-    "paths": [["nomad.exe", "nomad.exe", "version"]],
+    "paths": [
+      [
+        "nomad.exe",
+        "nomad.exe",
+        "version"
+      ]
+    ],
     "repository": "hashicorp/nomad",
     "uriTemplate": "https://releases.hashicorp.com/nomad/%version%/nomad_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "jq",
-    "paths": [["jq-win64.exe", "jq.exe", "--version"]],
+    "paths": [
+      [
+        "jq-win64.exe",
+        "jq.exe",
+        "--version"
+      ]
+    ],
     "repository": "stedolan/jq",
     "uriTemplate": "https://github.com/stedolan/jq/releases/download/jq-%version%/jq-win64.exe",
     "versionPrefix": "jq-"
   },
   {
     "binary": "yq",
-    "paths": [["yq_windows_amd64.exe", "yq.exe", "--version"]],
+    "paths": [
+      [
+        "yq_windows_amd64.exe",
+        "yq.exe",
+        "--version"
+      ]
+    ],
     "repository": "mikefarah/yq",
     "uriTemplate": "https://github.com/mikefarah/yq/releases/download/v%version%/yq_windows_amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "cloc",
-    "paths": [["cloc-%version%.exe", "cloc.exe", "--version"]],
+    "paths": [
+      [
+        "cloc-%version%.exe",
+        "cloc.exe",
+        "--version"
+      ]
+    ],
     "repository": "AlDanial/cloc",
     "uriTemplate": "https://github.com/AlDanial/cloc/releases/download/v%version%/cloc-%version%.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "jo",
-    "paths": [["jo.exe", "jo.exe", "-v"]],
+    "paths": [
+      [
+        "jo.exe",
+        "jo.exe",
+        "-v"
+      ]
+    ],
     "repository": "jpmens/jo",
     "uriTemplate": "https://github.com/jpmens/jo/releases/download/%version%/jo.exe",
     "versionPrefix": ""
   },
   {
     "binary": "fx",
-    "paths": [["fx_windows_amd64.exe", "fx.exe", "--version"]],
+    "paths": [
+      [
+        "fx_windows_amd64.exe",
+        "fx.exe",
+        "--version"
+      ]
+    ],
     "repository": "antonmedv/fx",
     "uriTemplate": "https://github.com/antonmedv/fx/releases/download/%version%/fx_windows_amd64.exe",
     "versionPrefix": ""
   },
   {
     "binary": "tunnelto",
-    "paths": [["tunnelto-windows.exe", "tunnelto.exe", "--version"]],
+    "paths": [
+      [
+        "tunnelto-windows.exe",
+        "tunnelto.exe",
+        "--version"
+      ]
+    ],
     "repository": "agrinman/tunnelto",
     "uriTemplate": "https://github.com/agrinman/tunnelto/releases/download/%version%/tunnelto-windows.exe",
     "versionPrefix": ""
   },
   {
     "binary": "bore",
-    "paths": [["bore.exe", "bore.exe", "--version"]],
+    "paths": [
+      [
+        "bore.exe",
+        "bore.exe",
+        "--version"
+      ]
+    ],
     "repository": "ekzhang/bore",
     "uriTemplate": "https://github.com/ekzhang/bore/releases/download/v%version%/bore-v%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
@@ -652,9 +1131,19 @@
   {
     "binary": "notation",
     "paths": [
-      ["docker-generate.exe", "docker-generate.exe"],
-      ["docker-notation.exe", "docker-notation.exe"],
-      ["notation.exe", "notation.exe", "--version"]
+      [
+        "docker-generate.exe",
+        "docker-generate.exe"
+      ],
+      [
+        "docker-notation.exe",
+        "docker-notation.exe"
+      ],
+      [
+        "notation.exe",
+        "notation.exe",
+        "--version"
+      ]
     ],
     "repository": "notaryproject/notation",
     "uriTemplate": "https://github.com/notaryproject/notation/releases/download/v%version%/notation_%version%_windows_amd64.zip",
@@ -662,21 +1151,39 @@
   },
   {
     "binary": "cosign",
-    "paths": [["cosign-windows-amd64.exe", "cosign.exe", "version"]],
+    "paths": [
+      [
+        "cosign-windows-amd64.exe",
+        "cosign.exe",
+        "version"
+      ]
+    ],
     "repository": "sigstore/cosign",
     "uriTemplate": "https://github.com/sigstore/cosign/releases/download/v%version%/cosign-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "sget",
-    "paths": [["sget-windows-amd64.exe", "sget.exe", "version"]],
+    "paths": [
+      [
+        "sget-windows-amd64.exe",
+        "sget.exe",
+        "version"
+      ]
+    ],
     "repository": "sigstore/cosign",
     "uriTemplate": "https://github.com/sigstore/cosign/releases/download/v%version%/sget-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "jtd-fuzz",
-    "paths": [["jtd-fuzz.exe", "jtd-fuzz.exe", "--version"]],
+    "paths": [
+      [
+        "jtd-fuzz.exe",
+        "jtd-fuzz.exe",
+        "--version"
+      ]
+    ],
     "repository": "jsontypedef/json-typedef-fuzz",
     "uriTemplate": "https://github.com/jsontypedef/json-typedef-fuzz/releases/download/v%version%/x86_64-pc-windows-gnu.zip",
     "versionPrefix": "v"
@@ -684,7 +1191,11 @@
   {
     "binary": "fd:gnu",
     "paths": [
-      ["fd-v%version%-x86_64-pc-windows-gnu\\fd.exe", "fd.exe", "--version"]
+      [
+        "fd-v%version%-x86_64-pc-windows-gnu\\fd.exe",
+        "fd.exe",
+        "--version"
+      ]
     ],
     "repository": "sharkdp/fd",
     "uriTemplate": "https://github.com/sharkdp/fd/releases/download/v%version%/fd-v%version%-x86_64-pc-windows-gnu.zip",
@@ -693,7 +1204,11 @@
   {
     "binary": "fd:msvc",
     "paths": [
-      ["fd-v%version%-x86_64-pc-windows-msvc\\fd.exe", "fd.exe", "--version"]
+      [
+        "fd-v%version%-x86_64-pc-windows-msvc\\fd.exe",
+        "fd.exe",
+        "--version"
+      ]
     ],
     "repository": "sharkdp/fd",
     "uriTemplate": "https://github.com/sharkdp/fd/releases/download/v%version%/fd-v%version%-x86_64-pc-windows-msvc.zip",
@@ -702,7 +1217,11 @@
   {
     "binary": "bat:gnu",
     "paths": [
-      ["bat-v%version%-x86_64-pc-windows-gnu\\bat.exe", "bat.exe", "--version"]
+      [
+        "bat-v%version%-x86_64-pc-windows-gnu\\bat.exe",
+        "bat.exe",
+        "--version"
+      ]
     ],
     "repository": "sharkdp/bat",
     "uriTemplate": "https://github.com/sharkdp/bat/releases/download/v%version%/bat-v%version%-x86_64-pc-windows-gnu.zip",
@@ -711,7 +1230,11 @@
   {
     "binary": "bat:msvc",
     "paths": [
-      ["bat-v%version%-x86_64-pc-windows-msvc\\bat.exe", "bat.exe", "--version"]
+      [
+        "bat-v%version%-x86_64-pc-windows-msvc\\bat.exe",
+        "bat.exe",
+        "--version"
+      ]
     ],
     "repository": "sharkdp/bat",
     "uriTemplate": "https://github.com/sharkdp/bat/releases/download/v%version%/bat-v%version%-x86_64-pc-windows-msvc.zip",
@@ -772,7 +1295,11 @@
   {
     "binary": "xh",
     "paths": [
-      ["xh-v%version%-x86_64-pc-windows-msvc\\xh.exe", "xh.exe", "--version"]
+      [
+        "xh-v%version%-x86_64-pc-windows-msvc\\xh.exe",
+        "xh.exe",
+        "--version"
+      ]
     ],
     "repository": "ducaale/xh",
     "uriTemplate": "https://github.com/ducaale/xh/releases/download/v%version%/xh-v%version%-x86_64-pc-windows-msvc.zip",
@@ -780,7 +1307,13 @@
   },
   {
     "binary": "oras",
-    "paths": [["oras.exe", "oras.exe", "version"]],
+    "paths": [
+      [
+        "oras.exe",
+        "oras.exe",
+        "version"
+      ]
+    ],
     "repository": "oras-project/oras",
     "uriTemplate": "https://github.com/oras-project/oras/releases/download/v%version%/oras_%version%_windows_amd64.zip",
     "versionPrefix": "v"
@@ -788,7 +1321,11 @@
   {
     "binary": "talosctl",
     "paths": [
-      ["talosctl-windows-amd64.exe", "talosctl.exe", "version --client"]
+      [
+        "talosctl-windows-amd64.exe",
+        "talosctl.exe",
+        "version --client"
+      ]
     ],
     "repository": "siderolabs/talos",
     "uriTemplate": "https://github.com/siderolabs/talos/releases/download/v%version%/talosctl-windows-amd64.exe",
@@ -796,7 +1333,13 @@
   },
   {
     "binary": "centrifugo",
-    "paths": [["centrifugo.exe", "centrifugo.exe", "version"]],
+    "paths": [
+      [
+        "centrifugo.exe",
+        "centrifugo.exe",
+        "version"
+      ]
+    ],
     "repository": "centrifugal/centrifugo",
     "uriTemplate": "https://github.com/centrifugal/centrifugo/releases/download/v%version%/centrifugo_%version%_windows_amd64.zip",
     "versionPrefix": "v"
@@ -804,7 +1347,11 @@
   {
     "binary": "toxiproxy-cli",
     "paths": [
-      ["toxiproxy-cli-windows-amd64.exe", "toxiproxy-cli.exe", "--version"]
+      [
+        "toxiproxy-cli-windows-amd64.exe",
+        "toxiproxy-cli.exe",
+        "--version"
+      ]
     ],
     "repository": "Shopify/toxiproxy",
     "uriTemplate": "https://github.com/Shopify/toxiproxy/releases/download/v%version%/toxiproxy-cli-windows-amd64.exe",
@@ -813,8 +1360,15 @@
   {
     "binary": "toxiproxy-server",
     "paths": [
-      ["toxiproxy-cli.exe", "toxiproxy-cli.exe"],
-      ["toxiproxy-server.exe", "toxiproxy-server.exe", "-version"]
+      [
+        "toxiproxy-cli.exe",
+        "toxiproxy-cli.exe"
+      ],
+      [
+        "toxiproxy-server.exe",
+        "toxiproxy-server.exe",
+        "-version"
+      ]
     ],
     "repository": "Shopify/toxiproxy",
     "uriTemplate": "https://github.com/Shopify/toxiproxy/releases/download/v%version%/toxiproxy_%version%_windows_amd64.tar.gz",
@@ -823,7 +1377,11 @@
   {
     "binary": "container-diff",
     "paths": [
-      ["container-diff-windows-amd64.exe", "container-diff.exe", "version"]
+      [
+        "container-diff-windows-amd64.exe",
+        "container-diff.exe",
+        "version"
+      ]
     ],
     "repository": "GoogleContainerTools/container-diff",
     "uriTemplate": "https://github.com/GoogleContainerTools/container-diff/releases/download/v%version%/container-diff-windows-amd64.exe",
@@ -831,42 +1389,78 @@
   },
   {
     "binary": "kubeaudit",
-    "paths": [["kubeaudit.exe", "kubeaudit.exe", "version"]],
+    "paths": [
+      [
+        "kubeaudit.exe",
+        "kubeaudit.exe",
+        "version"
+      ]
+    ],
     "repository": "Shopify/kubeaudit",
     "uriTemplate": "https://github.com/Shopify/kubeaudit/releases/download/v%version%/kubeaudit_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "nfpm",
-    "paths": [["nfpm.exe", "nfpm.exe", "--version"]],
+    "paths": [
+      [
+        "nfpm.exe",
+        "nfpm.exe",
+        "--version"
+      ]
+    ],
     "repository": "goreleaser/nfpm",
     "uriTemplate": "https://github.com/goreleaser/nfpm/releases/download/v%version%/nfpm_%version%_Windows_x86_64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "dapr",
-    "paths": [["dapr.exe", "dapr.exe", "--version"]],
+    "paths": [
+      [
+        "dapr.exe",
+        "dapr.exe",
+        "--version"
+      ]
+    ],
     "repository": "dapr/cli",
     "uriTemplate": "https://github.com/dapr/cli/releases/download/v%version%/dapr_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "rancher",
-    "paths": [["rancher-v%version%\\rancher.exe", "rancher.exe", "--version"]],
+    "paths": [
+      [
+        "rancher-v%version%\\rancher.exe",
+        "rancher.exe",
+        "--version"
+      ]
+    ],
     "repository": "rancher/cli",
     "uriTemplate": "https://github.com/rancher/cli/releases/download/v%version%/rancher-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "sops",
-    "paths": [["sops-v%version%.exe", "sops.exe", "--version"]],
+    "paths": [
+      [
+        "sops-v%version%.exe",
+        "sops.exe",
+        "--version"
+      ]
+    ],
     "repository": "mozilla/sops",
     "uriTemplate": "https://github.com/mozilla/sops/releases/download/v%version%/sops-v%version%.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "sinker",
-    "paths": [["sinker-windows-amd64", "sinker.exe", "--version"]],
+    "paths": [
+      [
+        "sinker-windows-amd64",
+        "sinker.exe",
+        "--version"
+      ]
+    ],
     "repository": "plexsystems/sinker",
     "uriTemplate": "https://github.com/plexsystems/sinker/releases/download/v%version%/sinker-windows-amd64",
     "versionPrefix": "v"
@@ -874,8 +1468,15 @@
   {
     "binary": "netbird",
     "paths": [
-      ["netbird-ui.exe", "netbird-ui.exe"],
-      ["netbird.exe", "netbird.exe", "version"]
+      [
+        "netbird-ui.exe",
+        "netbird-ui.exe"
+      ],
+      [
+        "netbird.exe",
+        "netbird.exe",
+        "version"
+      ]
     ],
     "repository": "netbirdio/netbird",
     "uriTemplate": "https://github.com/netbirdio/netbird/releases/download/v%version%/netbird_%version%_windows_amd64_signed.tar.gz",
@@ -883,7 +1484,13 @@
   },
   {
     "binary": "cyclonedx",
-    "paths": [["cyclonedx-win-x64.exe", "cyclonedx.exe", "--version"]],
+    "paths": [
+      [
+        "cyclonedx-win-x64.exe",
+        "cyclonedx.exe",
+        "--version"
+      ]
+    ],
     "repository": "CycloneDX/cyclonedx-cli",
     "uriTemplate": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v%version%/cyclonedx-win-x64.exe",
     "versionPrefix": "v"
@@ -891,7 +1498,11 @@
   {
     "binary": "pdfcpu",
     "paths": [
-      ["pdfcpu_%version%_Windows_x86_64\\pdfcpu.exe", "pdfcpu.exe", "version"]
+      [
+        "pdfcpu_%version%_Windows_x86_64\\pdfcpu.exe",
+        "pdfcpu.exe",
+        "version"
+      ]
     ],
     "repository": "pdfcpu/pdfcpu",
     "uriTemplate": "https://github.com/pdfcpu/pdfcpu/releases/download/v%version%/pdfcpu_%version%_Windows_x86_64.zip",
@@ -899,42 +1510,77 @@
   },
   {
     "binary": "adguardhome",
-    "paths": [["AdGuardHome\\AdGuardHome.exe", "adguardhome.exe", "--version"]],
+    "paths": [
+      [
+        "AdGuardHome\\AdGuardHome.exe",
+        "adguardhome.exe",
+        "--version"
+      ]
+    ],
     "repository": "AdguardTeam/AdGuardHome",
     "uriTemplate": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v%version%/AdGuardHome_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "rathole",
-    "paths": [["rathole.exe", "rathole.exe", "--version"]],
+    "paths": [
+      [
+        "rathole.exe",
+        "rathole.exe",
+        "--version"
+      ]
+    ],
     "repository": "rapiz1/rathole",
     "uriTemplate": "https://github.com/rapiz1/rathole/releases/download/v%version%/rathole-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "dnscrypt-proxy",
-    "paths": [["win64\\dnscrypt-proxy.exe", "dnscrypt-proxy.exe", "-version"]],
+    "paths": [
+      [
+        "win64\\dnscrypt-proxy.exe",
+        "dnscrypt-proxy.exe",
+        "-version"
+      ]
+    ],
     "repository": "DNSCrypt/dnscrypt-proxy",
     "uriTemplate": "https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/%version%/dnscrypt-proxy-win64-%version%.zip",
     "versionPrefix": ""
   },
   {
     "binary": "dnscrypt",
-    "paths": [["windows-amd64\\dnscrypt.exe", "dnscrypt.exe", "version"]],
+    "paths": [
+      [
+        "windows-amd64\\dnscrypt.exe",
+        "dnscrypt.exe",
+        "version"
+      ]
+    ],
     "repository": "ameshkov/dnscrypt",
     "uriTemplate": "https://github.com/ameshkov/dnscrypt/releases/download/v%version%/dnscrypt-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "diag",
-    "paths": [["diag_%version%_windows_amd64.exe", "diag.exe"]],
+    "paths": [
+      [
+        "diag_%version%_windows_amd64.exe",
+        "diag.exe"
+      ]
+    ],
     "repository": "nextdns/diag",
     "uriTemplate": "https://github.com/nextdns/diag/releases/download/v%version%/diag_%version%_windows_amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "nextdns",
-    "paths": [["nextdns.exe", "nextdns.exe", "version"]],
+    "paths": [
+      [
+        "nextdns.exe",
+        "nextdns.exe",
+        "version"
+      ]
+    ],
     "repository": "nextdns/nextdns",
     "uriTemplate": "https://github.com/nextdns/nextdns/releases/download/v%version%/nextdns_%version%_windows_amd64.zip",
     "versionPrefix": "v"
@@ -942,8 +1588,15 @@
   {
     "binary": "doggo",
     "paths": [
-      ["doggo-api.bin.exe", "doggo-api.bin.exe"],
-      ["doggo.exe", "doggo.exe", "--version"]
+      [
+        "doggo-api.bin.exe",
+        "doggo-api.bin.exe"
+      ],
+      [
+        "doggo.exe",
+        "doggo.exe",
+        "--version"
+      ]
     ],
     "repository": "mr-karan/doggo",
     "uriTemplate": "https://github.com/mr-karan/doggo/releases/download/v%version%/doggo_%version%_windows_amd64.tar.gz",
@@ -951,63 +1604,117 @@
   },
   {
     "binary": "wstunnel",
-    "paths": [["wstunnel.exe", "wstunnel.exe", "--version"]],
+    "paths": [
+      [
+        "wstunnel.exe",
+        "wstunnel.exe",
+        "--version"
+      ]
+    ],
     "repository": "erebe/wstunnel",
     "uriTemplate": "https://github.com/erebe/wstunnel/releases/download/v%version%/wstunnel-windows-x64.exe.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "vale",
-    "paths": [["vale.exe", "vale.exe", "--version"]],
+    "paths": [
+      [
+        "vale.exe",
+        "vale.exe",
+        "--version"
+      ]
+    ],
     "repository": "errata-ai/vale",
     "uriTemplate": "https://github.com/errata-ai/vale/releases/download/v%version%/vale_%version%_Windows_64-bit.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "ghcup",
-    "paths": [["x86_64-mingw64-ghcup-%version%.exe", "ghcup.exe", "--version"]],
+    "paths": [
+      [
+        "x86_64-mingw64-ghcup-%version%.exe",
+        "ghcup.exe",
+        "--version"
+      ]
+    ],
     "repository": "haskell/ghcup-hs",
     "uriTemplate": "https://github.com/haskell/ghcup-hs/releases/download/v%version%/x86_64-mingw64-ghcup-%version%.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "dnslookup",
-    "paths": [["windows-amd64\\dnslookup.exe", "dnslookup.exe", "--version"]],
+    "paths": [
+      [
+        "windows-amd64\\dnslookup.exe",
+        "dnslookup.exe",
+        "--version"
+      ]
+    ],
     "repository": "ameshkov/dnslookup",
     "uriTemplate": "https://github.com/ameshkov/dnslookup/releases/download/v%version%/dnslookup-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "caddy",
-    "paths": [["caddy.exe", "caddy.exe", "version"]],
+    "paths": [
+      [
+        "caddy.exe",
+        "caddy.exe",
+        "version"
+      ]
+    ],
     "repository": "caddyserver/caddy",
     "uriTemplate": "https://github.com/caddyserver/caddy/releases/download/v%version%/caddy_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "pint",
-    "paths": [["pint-windows-amd64.exe", "pint.exe", "version"]],
+    "paths": [
+      [
+        "pint-windows-amd64.exe",
+        "pint.exe",
+        "version"
+      ]
+    ],
     "repository": "cloudflare/pint",
     "uriTemplate": "https://github.com/cloudflare/pint/releases/download/v%version%/pint-%version%-windows-x86_64.tar.gz",
     "versionPrefix": "v"
   },
   {
     "binary": "kubectl-flame",
-    "paths": [["kubectl-flame.exe", "kubectl-flame.exe", "--version"]],
+    "paths": [
+      [
+        "kubectl-flame.exe",
+        "kubectl-flame.exe",
+        "--version"
+      ]
+    ],
     "repository": "yahoo/kubectl-flame",
     "uriTemplate": "https://github.com/yahoo/kubectl-flame/releases/download/v%version%/kubectl-flame_v%version%_windows_x86_64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "zoxide",
-    "paths": [["zoxide.exe", "zoxide.exe", "--version"]],
+    "paths": [
+      [
+        "zoxide.exe",
+        "zoxide.exe",
+        "--version"
+      ]
+    ],
     "repository": "ajeetdsouza/zoxide",
     "uriTemplate": "https://github.com/ajeetdsouza/zoxide/releases/download/v%version%/zoxide-%version%-x86_64-pc-windows-msvc.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "fzf",
-    "paths": [["fzf.exe", "fzf.exe", "--version"]],
+    "paths": [
+      [
+        "fzf.exe",
+        "fzf.exe",
+        "--version"
+      ]
+    ],
     "repository": "junegunn/fzf",
     "uriTemplate": "https://github.com/junegunn/fzf/releases/download/%version%/fzf-%version%-windows_amd64.zip",
     "versionPrefix": ""
@@ -1015,7 +1722,11 @@
   {
     "binary": "rg:gnu",
     "paths": [
-      ["ripgrep-13.0.0-x86_64-pc-windows-gnu\\rg.exe", "rg.exe", "--version"]
+      [
+        "ripgrep-13.0.0-x86_64-pc-windows-gnu\\rg.exe",
+        "rg.exe",
+        "--version"
+      ]
     ],
     "repository": "BurntSushi/ripgrep",
     "uriTemplate": "https://github.com/BurntSushi/ripgrep/releases/download/%version%/ripgrep-%version%-x86_64-pc-windows-gnu.zip",
@@ -1024,7 +1735,11 @@
   {
     "binary": "rg:msvc",
     "paths": [
-      ["ripgrep-13.0.0-x86_64-pc-windows-msvc\\rg.exe", "rg.exe", "--version"]
+      [
+        "ripgrep-13.0.0-x86_64-pc-windows-msvc\\rg.exe",
+        "rg.exe",
+        "--version"
+      ]
     ],
     "repository": "BurntSushi/ripgrep",
     "uriTemplate": "https://github.com/BurntSushi/ripgrep/releases/download/%version%/ripgrep-%version%-x86_64-pc-windows-msvc.zip",
@@ -1032,35 +1747,64 @@
   },
   {
     "binary": "git-xargs",
-    "paths": [["git-xargs_windows_amd64.exe", "git-xargs.exe", "--version"]],
+    "paths": [
+      [
+        "git-xargs_windows_amd64.exe",
+        "git-xargs.exe",
+        "--version"
+      ]
+    ],
     "repository": "gruntwork-io/git-xargs",
     "uriTemplate": "https://github.com/gruntwork-io/git-xargs/releases/download/v%version%/git-xargs_windows_amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "go-dispatch-proxy",
-    "paths": [["go-dispatch-proxy.exe", "go-dispatch-proxy.exe"]],
+    "paths": [
+      [
+        "go-dispatch-proxy.exe",
+        "go-dispatch-proxy.exe"
+      ]
+    ],
     "repository": "extremecoders-re/go-dispatch-proxy",
     "uriTemplate": "https://github.com/extremecoders-re/go-dispatch-proxy/releases/download/v%version%/go-dispatch-proxy.win.x64.7z",
     "versionPrefix": "v"
   },
   {
     "binary": "scepclient",
-    "paths": [["scepclient-windows-amd64.exe", "scepclient.exe", "-version"]],
+    "paths": [
+      [
+        "scepclient-windows-amd64.exe",
+        "scepclient.exe",
+        "-version"
+      ]
+    ],
     "repository": "micromdm/scep",
     "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepclient-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "scepserver",
-    "paths": [["scepserver-windows-amd64.exe", "scepserver.exe", "-version"]],
+    "paths": [
+      [
+        "scepserver-windows-amd64.exe",
+        "scepserver.exe",
+        "-version"
+      ]
+    ],
     "repository": "micromdm/scep",
     "uriTemplate": "https://github.com/micromdm/scep/releases/download/v%version%/scepserver-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "protoc",
-    "paths": [["bin\\protoc.exe", "protoc.exe", "--version"]],
+    "paths": [
+      [
+        "bin\\protoc.exe",
+        "protoc.exe",
+        "--version"
+      ]
+    ],
     "repository": "protocolbuffers/protobuf",
     "uriTemplate": "https://github.com/protocolbuffers/protobuf/releases/download/v%version%/protoc-%version%-win64.zip",
     "versionPrefix": "v"
@@ -1068,9 +1812,19 @@
   {
     "binary": "capnp",
     "paths": [
-      ["capnproto-tools-win32-%version%\\capnpc-c++.exe", "capnpc-c++.exe"],
-      ["capnproto-tools-win32-%version%\\capnpc-capnp.exe", "capnpc-capnp.exe"],
-      ["capnproto-tools-win32-%version%\\capnp.exe", "capnp.exe", "--version"]
+      [
+        "capnproto-tools-win32-%version%\\capnpc-c++.exe",
+        "capnpc-c++.exe"
+      ],
+      [
+        "capnproto-tools-win32-%version%\\capnpc-capnp.exe",
+        "capnpc-capnp.exe"
+      ],
+      [
+        "capnproto-tools-win32-%version%\\capnp.exe",
+        "capnp.exe",
+        "--version"
+      ]
     ],
     "repository": "capnproto/capnproto",
     "uriTemplate": "https://capnproto.org/capnproto-c++-win32-%version%.zip",
@@ -1078,21 +1832,37 @@
   },
   {
     "binary": "sslip.io",
-    "paths": [["sslip.io-dns-server-windows-amd64.exe", "sslip.io.exe"]],
+    "paths": [
+      [
+        "sslip.io-dns-server-windows-amd64.exe",
+        "sslip.io.exe"
+      ]
+    ],
     "repository": "cunnie/sslip.io",
     "uriTemplate": "https://github.com/cunnie/sslip.io/releases/download/%version%/sslip.io-dns-server-windows-amd64.exe",
     "versionPrefix": ""
   },
   {
     "binary": "ipfs",
-    "paths": [["kubo\\ipfs.exe", "ipfs.exe", "version"]],
+    "paths": [
+      [
+        "kubo\\ipfs.exe",
+        "ipfs.exe",
+        "version"
+      ]
+    ],
     "repository": "ipfs/kubo",
     "uriTemplate": "https://github.com/ipfs/kubo/releases/download/v%version%/kubo_v%version%_windows-amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "glider",
-    "paths": [["glider_%version%_windows_amd64v3\\glider.exe", "glider.exe"]],
+    "paths": [
+      [
+        "glider_%version%_windows_amd64v3\\glider.exe",
+        "glider.exe"
+      ]
+    ],
     "repository": "nadoo/glider",
     "uriTemplate": "https://github.com/nadoo/glider/releases/download/v%version%/glider_%version%_windows_amd64v3.zip",
     "versionPrefix": "v"
@@ -1100,7 +1870,11 @@
   {
     "binary": "frpc",
     "paths": [
-      ["frp_%version%_windows_amd64\\frpc.exe", "frpc.exe", "--version"]
+      [
+        "frp_%version%_windows_amd64\\frpc.exe",
+        "frpc.exe",
+        "--version"
+      ]
     ],
     "repository": "fatedier/frp",
     "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
@@ -1109,7 +1883,11 @@
   {
     "binary": "frps",
     "paths": [
-      ["frp_%version%_windows_amd64\\frps.exe", "frps.exe", "--version"]
+      [
+        "frp_%version%_windows_amd64\\frps.exe",
+        "frps.exe",
+        "--version"
+      ]
     ],
     "repository": "fatedier/frp",
     "uriTemplate": "https://github.com/fatedier/frp/releases/download/v%version%/frp_%version%_windows_amd64.zip",
@@ -1117,49 +1895,91 @@
   },
   {
     "binary": "librespeed-cli",
-    "paths": [["librespeed-cli.exe", "librespeed-cli.exe", "--version"]],
+    "paths": [
+      [
+        "librespeed-cli.exe",
+        "librespeed-cli.exe",
+        "--version"
+      ]
+    ],
     "repository": "librespeed/speedtest-cli",
     "uriTemplate": "https://github.com/librespeed/speedtest-cli/releases/download/v%version%/librespeed-cli_%version%_windows_amd64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "minikube",
-    "paths": [["minikube-windows-amd64.exe", "minikube.exe", "version"]],
+    "paths": [
+      [
+        "minikube-windows-amd64.exe",
+        "minikube.exe",
+        "version"
+      ]
+    ],
     "repository": "kubernetes/minikube",
     "uriTemplate": "https://github.com/kubernetes/minikube/releases/download/v%version%/minikube-windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "alfis",
-    "paths": [["alfis.exe", "alfis.exe", "--version"]],
+    "paths": [
+      [
+        "alfis.exe",
+        "alfis.exe",
+        "--version"
+      ]
+    ],
     "repository": "Revertron/Alfis",
     "uriTemplate": "https://github.com/Revertron/Alfis/releases/download/v%version%/alfis-windows-amd64-v%version%-edge.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "elvish",
-    "paths": [["elvish-v%version%.exe", "elvish.exe", "-version"]],
+    "paths": [
+      [
+        "elvish-v%version%.exe",
+        "elvish.exe",
+        "-version"
+      ]
+    ],
     "repository": "elves/elvish",
     "uriTemplate": "https://dl.elv.sh/windows-amd64/elvish-v%version%.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "configcat",
-    "paths": [["win-x64\\configcat.exe", "configcat.exe", "--version"]],
+    "paths": [
+      [
+        "win-x64\\configcat.exe",
+        "configcat.exe",
+        "--version"
+      ]
+    ],
     "repository": "configcat/cli",
     "uriTemplate": "https://github.com/configcat/cli/releases/download/v%version%/configcat-cli_%version%_win-x64.zip",
     "versionPrefix": "v"
   },
   {
     "binary": "dumbproxy",
-    "paths": [["dumbproxy.windows-amd64.exe", "dumbproxy.exe", "-version"]],
+    "paths": [
+      [
+        "dumbproxy.windows-amd64.exe",
+        "dumbproxy.exe",
+        "-version"
+      ]
+    ],
     "repository": "Snawoot/dumbproxy",
     "uriTemplate": "https://github.com/Snawoot/dumbproxy/releases/download/v%version%/dumbproxy.windows-amd64.exe",
     "versionPrefix": "v"
   },
   {
     "binary": "dnsproxy",
-    "paths": [["windows-amd64\\dnsproxy.exe", "dnsproxy.exe", "--version"]],
+    "paths": [
+      [
+        "windows-amd64\\dnsproxy.exe",
+        "dnsproxy.exe",
+        "--version"
+      ]
+    ],
     "repository": "AdguardTeam/dnsproxy",
     "uriTemplate": "https://github.com/AdguardTeam/dnsproxy/releases/download/v%version%/dnsproxy-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
