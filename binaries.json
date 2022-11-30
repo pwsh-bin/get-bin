@@ -2213,5 +2213,18 @@
     "repository": "unstoppabledomains/resolution-cli",
     "uriTemplate": "https://github.com/unstoppabledomains/resolution-cli/releases/download/v%version%/resolution-windows-amd64.exe.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "websocat",
+    "paths": [
+      [
+        "websocat.x86_64-pc-windows-gnu.exe",
+        "websocat.exe",
+        "--version"
+      ]
+    ],
+    "repository": "vi/websocat",
+    "uriTemplate": "https://github.com/vi/websocat/releases/download/v%version%/websocat.x86_64-pc-windows-gnu.exe",
+    "versionPrefix": "v"
   }
 ]
