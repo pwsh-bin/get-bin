@@ -2059,5 +2059,17 @@
     "repository": "magefile/mage",
     "uriTemplate": "https://github.com/magefile/mage/releases/download/v%version%/mage_%version%_Windows-64bit.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "roumon",
+    "paths": [
+      [
+        "roumon.exe",
+        "roumon.exe"
+      ]
+    ],
+    "repository": "becheran/roumon",
+    "uriTemplate": "https://github.com/becheran/roumon/releases/download/v%version%/roumon_%version%_Windows_x86_64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
