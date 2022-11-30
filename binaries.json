@@ -2200,5 +2200,18 @@
     "repository": "coder/coder",
     "uriTemplate": "https://github.com/coder/coder/releases/download/v%version%/coder_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "resolution",
+    "paths": [
+      [
+        "resolution-windows-amd64.exe",
+        "resolution.exe",
+        "--version"
+      ]
+    ],
+    "repository": "unstoppabledomains/resolution-cli",
+    "uriTemplate": "https://github.com/unstoppabledomains/resolution-cli/releases/download/v%version%/resolution-windows-amd64.exe.zip",
+    "versionPrefix": "v"
   }
 ]
