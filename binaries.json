@@ -2110,5 +2110,17 @@
     "repository": "scaleway/scaleway-cli",
     "uriTemplate": "https://github.com/scaleway/scaleway-cli/releases/download/v%version%/scaleway-cli_%version%_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "xcaddy",
+    "paths": [
+      [
+        "xcaddy.exe",
+        "xcaddy.exe"
+      ]
+    ],
+    "repository": "caddyserver/xcaddy",
+    "uriTemplate": "https://github.com/caddyserver/xcaddy/releases/download/v%version%/xcaddy_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
