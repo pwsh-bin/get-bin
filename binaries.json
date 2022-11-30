@@ -2097,5 +2097,18 @@
     "repository": "bengadbois/pewpew",
     "uriTemplate": "https://github.com/bengadbois/pewpew/releases/download/v%version%/windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "scw",
+    "paths": [
+      [
+        "scaleway-cli_%version%_windows_amd64.exe",
+        "scw.exe",
+        "version"
+      ]
+    ],
+    "repository": "scaleway/scaleway-cli",
+    "uriTemplate": "https://github.com/scaleway/scaleway-cli/releases/download/v%version%/scaleway-cli_%version%_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
