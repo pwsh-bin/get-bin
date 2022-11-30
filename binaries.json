@@ -2122,5 +2122,18 @@
     "repository": "caddyserver/xcaddy",
     "uriTemplate": "https://github.com/caddyserver/xcaddy/releases/download/v%version%/xcaddy_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dnspyre",
+    "paths": [
+      [
+        "dnspyre-windows-amd64",
+        "dnspyre.exe",
+        "--version"
+      ]
+    ],
+    "repository": "Tantalor93/dnspyre",
+    "uriTemplate": "https://github.com/Tantalor93/dnspyre/releases/download/v%version%/dnspyre-windows-amd64",
+    "versionPrefix": "v"
   }
 ]
