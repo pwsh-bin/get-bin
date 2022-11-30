@@ -2046,5 +2046,18 @@
     "repository": "nikepan/clickhouse-bulk",
     "uriTemplate": "https://github.com/nikepan/clickhouse-bulk/releases/download/v%version%/clickhouse-bulk_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "mage",
+    "paths": [
+      [
+        "mage.exe",
+        "mage.exe",
+        "-version"
+      ]
+    ],
+    "repository": "magefile/mage",
+    "uriTemplate": "https://github.com/magefile/mage/releases/download/v%version%/mage_%version%_Windows-64bit.zip",
+    "versionPrefix": "v"
   }
 ]
