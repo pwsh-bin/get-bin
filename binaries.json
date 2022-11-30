@@ -2333,5 +2333,18 @@
     "repository": "ameshkov/godnsbench",
     "uriTemplate": "https://github.com/ameshkov/godnsbench/releases/download/v%version%/godnsbench-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "lunatic",
+    "paths": [
+      [
+        "lunatic.exe",
+        "lunatic.exe",
+        "--version"
+      ]
+    ],
+    "repository": "lunatic-solutions/lunatic",
+    "uriTemplate": "https://github.com/lunatic-solutions/lunatic/releases/download/v%version%/lunatic-windows-amd64.zip",
+    "versionPrefix": "v"
   }
 ]
