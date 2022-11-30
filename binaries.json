@@ -2346,5 +2346,18 @@
     "repository": "lunatic-solutions/lunatic",
     "uriTemplate": "https://github.com/lunatic-solutions/lunatic/releases/download/v%version%/lunatic-windows-amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "blocky",
+    "paths": [
+      [
+        "blocky.exe",
+        "blocky.exe",
+        "version"
+      ]
+    ],
+    "repository": "0xERR0R/blocky",
+    "uriTemplate": "https://github.com/0xERR0R/blocky/releases/download/v%version%/blocky_%version%_Windows_x86_64.zip",
+    "versionPrefix": "v"
   }
 ]
