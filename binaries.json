@@ -2294,5 +2294,18 @@
     "repository": "ddosify/ddosify",
     "uriTemplate": "https://github.com/ddosify/ddosify/releases/download/v%version%/ddosify_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "scorecard",
+    "paths": [
+      [
+        "scorecard-windows-amd64.exe",
+        "scorecard.exe",
+        "version"
+      ]
+    ],
+    "repository": "ossf/scorecard",
+    "uriTemplate": "https://github.com/ossf/scorecard/releases/download/v%version%/scorecard_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
