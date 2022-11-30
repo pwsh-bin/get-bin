@@ -2084,5 +2084,18 @@
     "repository": "go-gilbert/gilbert",
     "uriTemplate": "https://github.com/go-gilbert/gilbert/releases/download/v%version%/gilbert_windows-amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "pewpew",
+    "paths": [
+      [
+        "pewpew\\pewpew.exe",
+        "pewpew.exe",
+        "version"
+      ]
+    ],
+    "repository": "bengadbois/pewpew",
+    "uriTemplate": "https://github.com/bengadbois/pewpew/releases/download/v%version%/windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
