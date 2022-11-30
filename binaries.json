@@ -2174,5 +2174,18 @@
     "repository": "six-ddc/plow",
     "uriTemplate": "https://github.com/six-ddc/plow/releases/download/v%version%/plow_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "juicefs",
+    "paths": [
+      [
+        "juicefs.exe",
+        "juicefs.exe",
+        "--version"
+      ]
+    ],
+    "repository": "juicedata/juicefs",
+    "uriTemplate": "https://github.com/juicedata/juicefs/releases/download/v%version%/juicefs-%version%-windows-amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
