@@ -2281,5 +2281,18 @@
     "repository": "slackhq/nebula",
     "uriTemplate": "https://github.com/slackhq/nebula/releases/download/v%version%/nebula-windows-amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "ddosify",
+    "paths": [
+      [
+        "ddosify.exe",
+        "ddosify.exe",
+        "-version"
+      ]
+    ],
+    "repository": "ddosify/ddosify",
+    "uriTemplate": "https://github.com/ddosify/ddosify/releases/download/v%version%/ddosify_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
