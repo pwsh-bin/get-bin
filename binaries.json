@@ -1995,5 +1995,18 @@
     "repository": "TomWright/dasel",
     "uriTemplate": "https://github.com/TomWright/dasel/releases/download/v%version%/dasel_windows_amd64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "fortio",
+    "paths": [
+      [
+        "fortio.exe",
+        "fortio.exe",
+        "-version"
+      ]
+    ],
+    "repository": "fortio/fortio",
+    "uriTemplate": "https://github.com/fortio/fortio/releases/download/v%version%/fortio_win_%version%.zip",
+    "versionPrefix": "v"
   }
 ]
