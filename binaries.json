@@ -2135,5 +2135,18 @@
     "repository": "Tantalor93/dnspyre",
     "uriTemplate": "https://github.com/Tantalor93/dnspyre/releases/download/v%version%/dnspyre-windows-amd64",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "clash-meta",
+    "paths": [
+      [
+        "Clash.Meta-windows-amd64.exe",
+        "clash-meta.exe",
+        "-v"
+      ]
+    ],
+    "repository": "MetaCubeX/Clash.Meta",
+    "uriTemplate": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v%version%/Clash.Meta-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
