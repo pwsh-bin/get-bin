@@ -2307,5 +2307,18 @@
     "repository": "ossf/scorecard",
     "uriTemplate": "https://github.com/ossf/scorecard/releases/download/v%version%/scorecard_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "qovery",
+    "paths": [
+      [
+        "qovery.exe",
+        "qovery.exe",
+        "version"
+      ]
+    ],
+    "repository": "Qovery/qovery-cli",
+    "uriTemplate": "https://github.com/Qovery/qovery-cli/releases/download/v%version%/qovery-cli_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
