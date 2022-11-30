@@ -2187,5 +2187,18 @@
     "repository": "juicedata/juicefs",
     "uriTemplate": "https://github.com/juicedata/juicefs/releases/download/v%version%/juicefs-%version%-windows-amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "coder",
+    "paths": [
+      [
+        "coder.exe",
+        "coder.exe",
+        "version"
+      ]
+    ],
+    "repository": "coder/coder",
+    "uriTemplate": "https://github.com/coder/coder/releases/download/v%version%/coder_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
