@@ -2239,5 +2239,18 @@
     "repository": "robiot/rustcat",
     "uriTemplate": "https://github.com/robiot/rustcat/releases/download/v%version%/rcat-v%version%-win-x86_64.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "fossa",
+    "paths": [
+      [
+        "fossa.exe",
+        "fossa.exe",
+        "--version"
+      ]
+    ],
+    "repository": "fossas/fossa-cli",
+    "uriTemplate": "https://github.com/fossas/fossa-cli/releases/download/v%version%/fossa_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
