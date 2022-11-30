@@ -2320,5 +2320,18 @@
     "repository": "Qovery/qovery-cli",
     "uriTemplate": "https://github.com/Qovery/qovery-cli/releases/download/v%version%/qovery-cli_%version%_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "godnsbench",
+    "paths": [
+      [
+        "windows-amd64\\godnsbench.exe",
+        "godnsbench.exe",
+        "--version"
+      ]
+    ],
+    "repository": "ameshkov/godnsbench",
+    "uriTemplate": "https://github.com/ameshkov/godnsbench/releases/download/v%version%/godnsbench-windows-amd64-v%version%.zip",
+    "versionPrefix": "v"
   }
 ]
