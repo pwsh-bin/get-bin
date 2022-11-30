@@ -2034,5 +2034,17 @@
     "repository": "go-task/task",
     "uriTemplate": "https://github.com/go-task/task/releases/download/v%version%/task_windows_amd64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "clickhouse-bulk",
+    "paths": [
+      [
+        "clickhouse-bulk.exe",
+        "clickhouse-bulk.exe"
+      ]
+    ],
+    "repository": "nikepan/clickhouse-bulk",
+    "uriTemplate": "https://github.com/nikepan/clickhouse-bulk/releases/download/v%version%/clickhouse-bulk_%version%_windows_amd64.zip",
+    "versionPrefix": "v"
   }
 ]
