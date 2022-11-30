@@ -2161,5 +2161,18 @@
     "repository": "NLnetLabs/unbound",
     "uriTemplate": "https://nlnetlabs.nl/downloads/unbound/unbound-%version%.zip",
     "versionPrefix": "release-"
+  },
+  {
+    "binary": "plow",
+    "paths": [
+      [
+        "plow.exe",
+        "plow.exe",
+        "--version"
+      ]
+    ],
+    "repository": "six-ddc/plow",
+    "uriTemplate": "https://github.com/six-ddc/plow/releases/download/v%version%/plow_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
