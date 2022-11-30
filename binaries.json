@@ -380,7 +380,7 @@
     "binary": "gsudo",
     "paths": [
       [
-        "gsudo.exe",
+        "x64/gsudo.exe",
         "gsudo.exe",
         "--version"
       ]
