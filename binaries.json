@@ -1983,5 +1983,17 @@
     "repository": "AdguardTeam/dnsproxy",
     "uriTemplate": "https://github.com/AdguardTeam/dnsproxy/releases/download/v%version%/dnsproxy-windows-amd64-v%version%.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "dasel",
+    "paths": [
+      [
+        "dasel_windows_amd64.exe",
+        "dasel.exe"
+      ]
+    ],
+    "repository": "TomWright/dasel",
+    "uriTemplate": "https://github.com/TomWright/dasel/releases/download/v%version%/dasel_windows_amd64.exe",
+    "versionPrefix": "v"
   }
 ]
