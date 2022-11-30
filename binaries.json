@@ -2226,5 +2226,18 @@
     "repository": "vi/websocat",
     "uriTemplate": "https://github.com/vi/websocat/releases/download/v%version%/websocat.x86_64-pc-windows-gnu.exe",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "rcat",
+    "paths": [
+      [
+        "rcat-v%version%-win-x86_64.exe",
+        "rcat.exe",
+        "--version"
+      ]
+    ],
+    "repository": "robiot/rustcat",
+    "uriTemplate": "https://github.com/robiot/rustcat/releases/download/v%version%/rcat-v%version%-win-x86_64.exe",
+    "versionPrefix": "v"
   }
 ]
