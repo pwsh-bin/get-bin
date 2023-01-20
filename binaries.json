@@ -2359,5 +2359,18 @@
     "repository": "0xERR0R/blocky",
     "uriTemplate": "https://github.com/0xERR0R/blocky/releases/download/v%version%/blocky_%version%_Windows_x86_64.zip",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "ghokin",
+    "paths": [
+      [
+        "ghokin.exe",
+        "ghokin.exe",
+        "version"
+      ]
+    ],
+    "repository": "antham/ghokin",
+    "uriTemplate": "https://github.com/antham/ghokin/releases/download/v%version%/ghokin_%version%_windows_amd64.tar.gz",
+    "versionPrefix": "v"
   }
 ]
