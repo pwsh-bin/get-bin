@@ -2372,5 +2372,18 @@
     "repository": "antham/ghokin",
     "uriTemplate": "https://github.com/antham/ghokin/releases/download/v%version%/ghokin_%version%_windows_amd64.tar.gz",
     "versionPrefix": "v"
+  },
+  {
+    "binary": "upx",
+    "paths": [
+      [
+        "upx-%version%-win64\\upx.exe",
+        "upx.exe",
+        "-V"
+      ]
+    ],
+    "repository": "upx/upx",
+    "uriTemplate": "https://github.com/upx/upx/releases/download/v%version%/upx-%version%-win64.zip",
+    "versionPrefix": "v"
   }
 ]
